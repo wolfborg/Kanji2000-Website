@@ -37,7 +37,7 @@ A.addEventListener("click",function(e){
 );
 	
 B.addEventListener("click",function(e){
-		if(isCorrect("B")){
+	if(isCorrect("B")){
 		nextQuestion();
 	}else{
 		this.setAttribute("disabled","disbaled");
@@ -75,6 +75,7 @@ D.addEventListener("click",function(e){
 			nextQuestion();
 		}
 	}
+	
 
 }
 );
@@ -89,13 +90,14 @@ function nextQuestion(e){
 	questionLabel.innerHTML = "<h3>" + (1+onQuestion) + "</h3>";
 
 	percent=percent+(100/numberQuestions);
+	bar.style.width = percent + "%";
 	
 	if(onQuestion==numberQuestions){
 		onQuestion = 0;
 		quizOver();
 	}else{
 		
-	bar.style.width = percent + "%";
+
 	A.removeAttribute("disabled");
 	B.removeAttribute("disabled");
 	C.removeAttribute("disabled");
@@ -109,7 +111,6 @@ function quizOver(){
 	percent = (100/numberQuestions);
 	bar.style.width = percent + "%";
 	questionLabel.innerHTML = "<h3>" + (1+onQuestion) + "</h3>";
-
 	alert("Quiz Over");
 }
 
