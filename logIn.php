@@ -29,39 +29,12 @@
           <form method="get" action="" id="mainForm">
             <fieldset>
               <legend>Log In</legend>
-              <table>
-                    <tr>
-           			<td>
-                          <p>
-                          <label>Username</label><br/>
-                             <input type="text" name="username" size="25" class="required"/>
-                          </p>
-             			</td>
-                    </tr>
-           		 <tr>
-           			<td>
-           				<p>
-           			      <label>Password</label><br/>
-                             <input type="password" name="password" size="25" class="required" />
-                          </p>
-                    <tr>
-                       <td colspan="2">
-                              <input type="submit" class="rounded" value="Log in">   
-                       </td>
-                    </tr>
-           		 
-                    <tr>
-                       <td>
-           				<a href="insert forgot password link">Forgot Password</a>
-                       </td>
-                    </tr>
-           		 <tr>
-                       <td>
-           				<a href="link to register account page">Register an Account</a>
-                       </td>
-                    </tr>
-                 </table>
-              </fieldset>
+              <p><label>Username</label><br/><input type="text" name="username" size="25" class="required"/></p>
+              <p><label>Password</label><br/><input type="password" name="password" size="25" class="required"/></p>
+              <input type="submit" class="rounded" value="Log in"><br/><br/>
+              <a href="insert forgot password link">Forgot Password</a><br/>
+              <a href="link to register account page">Register an Account</a><br/>
+            </fieldset>
           </form>
         </div>
       </div>
