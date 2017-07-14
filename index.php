@@ -122,7 +122,7 @@
               <label>Email Address:</label> <input type="text" name="email" size="25" class="required"/><br/>
               <label>Confirm Email:</label> <input type="text" name="confirmEmail" size="25" class="required"/><br/>
               <label>Enter Password:</label> <input type="password" name="password" size="25" class="required"/><br/>
-              <label>Confirm Password:</label> <input ttype="password" name="confirmPassword" size="25" class="required"/><br/>
+              <label>Confirm Password:</label> <input type="password" name="confirmPassword" size="25" class="required"/><br/>
               <label>Enter You Skill Level:</label>
                 <input type="radio" name="skill" value="beginner" class="required"/> Beginner
                 <input type="radio" name="skill" value="intermediate" class="required"/> Intermediate
