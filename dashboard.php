@@ -68,18 +68,18 @@
  		</div>
 
 		<div class="row" align="center">
-			<div class="col-lg-6">
+			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
 				<button id="A" type="button" class="btn btn-lg btn-default customButton">Cat</button>
 			</div>
-			<div class="col-lg-6">
+			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
 				<button id="B" type="button" class="btn btn-lg btn-default customButton">Dog</button>
 			</div>
 			<br><br><br><br>
 
-			<div class="col-lg-6">
+			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
 				<button id="C" type="button" class="btn btn-lg btn-default customButton">Jones</button>
 			</div>
-			<div class="col-lg-6">
+			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
 				<button id="D" type="button" class="btn btn-lg btn-default customButton">Ball</button>
 			</div>
 			<br><br><br><br>
@@ -93,7 +93,7 @@
 		<div class="row" align="center">
 		  <div class="col-sm-6 glyphicon glyphicon-" align="center"><button id="backButton" class=glyphicon-arrow-left></button></div>
 		 <div class="col-sm-6 glyphicon glyphicon-" align="center"><button id="nextButton" class=glyphicon-arrow-right></button></div>
-		 <div class="col-sm-6 col-lg-12 col-md-offset-3 col-sm-offset-3">
+		 <div class="col-sm-6 col-lg-12 col-sm-offset-3 col-md-offset-3 col-lg-offset-0">
 		 	<h3 id="numberQuestion"> 1 </h3>
 		 </div>
 		 <div class="col-sm-12"></div>
