@@ -1,43 +1,79 @@
-<html>
-  <head lang="en">
-     <meta charset="utf-8">
-     <title>Login</title>
-     <meta charset="utf-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="stylesheet" href="css/bootstrap.min.css" media="screen">
-     <link rel="stylesheet" href="css/style.css" media="screen">
-     <script src="http://code.jquery.com/jquery.js"></script>
-     <script src="js/bootstrap.min.js"></script>
-     <script type="text/javascript" src="registration_validation.js"></script>
-  </head>
-  <body>
-    <header>
-      <div class="container">
-        <nav class="navbar navbar-default">
-          <ul class="nav navbar-nav">
-            <li class="nav-item active"><a href="/">Home</a></li>
-            <li><a href="login.php">Login</a></li>
-            <li><a href="register.php">Register</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+<?php
+require 'database.php';
+session_start();
+// Validates form and allows the user to login
+function user_login() {
+	// Checks if form is submitted
+	if(isset($_POST) && !empty($_POST) && isset($_POST["login"])) {
+		//Checks if username is entered
+		if(isset($_POST["username"]) && !empty($_POST["username"])) {
+			$username = $_POST["username"];
+		}
+		else {
+			echo "Username required.<br>";
+		}
 
-    <main>
-      <div class="container">
-        <div class="row">
-          <form method="get" action="" id="mainForm">
-            <fieldset>
-              <legend>Log In</legend>
-              <p><label>Username</label><br/><input type="text" name="username" size="25" class="required"/></p>
-              <p><label>Password</label><br/><input type="password" name="password" size="25" class="required"/></p>
-              <input type="submit" class="rounded" value="Log in"><br/><br/>
-              <a href="insert forgot password link">Forgot Password</a><br/>
-              <a href="link to register account page">Register an Account</a><br/>
-            </fieldset>
-          </form>
-        </div>
-      </div>
-    </main>
-  </body>
-</html>
+		// Checks if password is entered
+		if(isset($_POST["password"]) && !empty($_POST["password"])) {
+			$password = $_POST["password"];
+		}
+		else {
+			echo "Password required.<br>";
+		}
+
+		// Logs in an existing user
+		if(isset($username) && isset($password)) {
+			// Checks for existing username in database
+			$sql = "SELECT * FROM `users` WHERE (`user_name`=" . db_quote($username) . ") LIMIT 1";
+			$result = db_select($sql);
+
+			// Checks for mysqli error
+			if($result === false) {
+				$error = db_error();
+				echo $error;
+			}
+			else {
+				// Checks for result
+				if(!empty($result)) {
+					$algorithm = "sha256";
+					$iterations = 10000;
+					$user_salt = $result[0]["user_salt"];
+					$password = $_POST["password"];
+					// Hashes entered password using the username's salt and PBKDF2
+					$password = hash_pbkdf2($algorithm, $password, $user_salt, $iterations);
+
+					// Checks for correct username and password
+					$sql = "SELECT * FROM `users` WHERE (`user_name`=" . db_quote($username) . " AND `user_password`=" . db_quote($password) . ") LIMIT 1";
+					$result = db_select($sql);
+					
+					// Checks for mysqli error
+					if($result === false) {
+						$error = db_error();
+						echo $error;
+					}
+					else {
+						// Checks for result
+						if(!empty($result)) {
+							echo "Login Successful<br>";
+							// Creates user session
+							$_SESSION['user_id'] = $result[0]['user_id'];
+							$_SESSION['user_name'] = $result[0]['user_name'];
+							$_SESSION['user_email'] = $result[0]['user_email'];
+							header("location: profile.php");
+						}
+						else {
+							echo "Invalid username or password. Please try again.<br>";
+						}
+					}
+				}
+				else {
+					echo "Invalid username or password. Please try again.<br>";
+				}
+			}
+		}
+	}
+}
+
+user_login();
+
+?>

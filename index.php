@@ -1,3 +1,10 @@
+<?php
+  session_start();
+  if(isset($_SESSION['user_id'])) {
+    header("location: dashboard.php");
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -82,7 +89,7 @@
           <h4 class="modal-title">Login</h4>
         </div>
         <div class="modal-body">
-          <form method="post" action="" id="mainForm">
+          <form method="post" action="login.php" id="login-form">
             <fieldset>
               <p><label>Username</label><br/><input type="text" name="username" size="25" class="required"/></p>
               <p><label>Password</label><br/><input type="password" name="password" size="25" class="required"/></p>
@@ -107,15 +114,15 @@
           <h4 class="modal-title">Register</h4>
         </div>
         <div class="modal-body">
-          <form method="post" action="" id="mainForm">
+          <form method="post" action="register.php" id="register-form">
             <fieldset>
               <label>First Name:</label> <input type="text" name="firstName" size="25" class="required"/><br/>
               <label>Last Name:</label> <input type="text" name="lastName" size="25" class="required" /><br/>
               <label>Username:</label> <input type="text" name="username" size="25" class="required"/><br/>
               <label>Email Address:</label> <input type="text" name="email" size="25" class="required"/><br/>
               <label>Confirm Email:</label> <input type="text" name="confirmEmail" size="25" class="required"/><br/>
-              <label>Enter Password:</label> <input type="text" name="password" size="25" class="required"/><br/>
-              <label>Confirm Password:</label> <input type="text" name="confirmPassword" size="25" class="required"/><br/>
+              <label>Enter Password:</label> <input type="password" name="password" size="25" class="required"/><br/>
+              <label>Confirm Password:</label> <input ttype="password" name="confirmPassword" size="25" class="required"/><br/>
               <label>Enter You Skill Level:</label>
                 <input type="radio" name="skill" value="beginner" class="required"/> Beginner
                 <input type="radio" name="skill" value="intermediate" class="required"/> Intermediate
