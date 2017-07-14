@@ -93,7 +93,7 @@
             <fieldset>
               <p><label>Username</label><br/><input type="text" name="username" size="25" class="required"/></p>
               <p><label>Password</label><br/><input type="password" name="password" size="25" class="required"/></p>
-              <input type="submit" class="rounded" value="Log in"><br/><br/>
+              <input type="submit" name="login" class="rounded" value="Log in"><br/><br/>
               <a href="#">Forgot Password</a><br/>
               <a data-toggle="modal" href="#registerModal">Register an Account</a><br/>
             </fieldset>
@@ -128,7 +128,7 @@
                 <input type="radio" name="skill" value="intermediate" class="required"/> Intermediate
                 <input type="radio" name="skill" value="expert" class="required"/> Expert<br/><br/>
               <div class="rectangle centered"> 
-                <input type="submit" class="rounded"/><tb/>&nbsp;&nbsp;&nbsp;<input type="reset" value="Clear Form" class="rounded"/>  
+                <input type="submit" name="register" class="rounded"/><tb/>&nbsp;&nbsp;&nbsp;<input type="reset" value="Clear Form" class="rounded"/>  
               </div>
             </fieldset>
           </form>

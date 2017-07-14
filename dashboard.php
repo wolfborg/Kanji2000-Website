@@ -38,7 +38,7 @@
                
             <span class="glyphicon glyphicon-user"> Account</span></a>
                 <ul class="dropdown-menu">
-                  <li><a href="#">Logout</a></li>
+                  <li><a href="/logout.php">Logout</a></li>
                   <li><a href="#">Settings</a></li>
                 </ul>
               </li>
