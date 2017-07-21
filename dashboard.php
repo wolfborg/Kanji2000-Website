@@ -25,13 +25,9 @@
   <nav class="navbar navbar-default">
    	<div class="container-fluid">
          	<div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#topFixedNavbar1" aria-expanded="false"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
             <a class="navbar-brand" href="#">Kanji-2000</a></div>
       <div class="collapse navbar-collapse" id="topFixedNavbar1">
-            
-            <form class="navbar-form navbar-left" role="search">
-              <div class="form-group"> </div>
-			</form>
+          
            
         <ul class="nav navbar-nav navbar-right">
           <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -39,7 +35,7 @@
             <span class="glyphicon glyphicon-user"> Account</span></a>
                 <ul class="dropdown-menu">
                   <li><a href="/logout.php">Logout</a></li>
-                  <li><a href="#">Settings</a></li>
+                  <li><a href="#" data-toggle="modal" data-target="#settingsModal">Settings</a></li>
                 </ul>
               </li>
             </ul>
@@ -60,45 +56,8 @@
 </div>
   
 <div class="container" style="height: 90%">
-<div class="row">   
-	<div class="jumbotron col-8 col-sm-offset-0 col-lg-4 col-lg-offset-4">
-		<div class="container" align="center">
-			<img id="Kanji" class="img-responsive img-center" src="Kanji.gif">
- 			<br><br>
- 		</div>
-
-		<div class="row" align="center">
-			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-				<button id="A" type="button" class="btn btn-lg btn-default customButton">Cat</button>
-			</div>
-			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-				<button id="B" type="button" class="btn btn-lg btn-default customButton">Dog</button>
-			</div>
-			<br><br><br><br>
-
-			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-				<button id="C" type="button" class="btn btn-lg btn-default customButton">Jones</button>
-			</div>
-			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-				<button id="D" type="button" class="btn btn-lg btn-default customButton">Ball</button>
-			</div>
-			<br><br><br><br>
-
-			<div class="col-lg-12">
-				<div class="progress" style="background-color: grey">
-					<div id="bar" class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:0%"></div>
-				</div>             
-			</div> 
-		</div>
-		<div class="row" align="center">
-		  <div class="col-sm-6 glyphicon glyphicon-" align="center"><button id="backButton" class=glyphicon-arrow-left></button></div>
-		 <div class="col-sm-6 glyphicon glyphicon-" align="center"><button id="nextButton" class=glyphicon-arrow-right></button></div>
-		 <div class="col-sm-6 col-lg-12 col-sm-offset-3 col-md-offset-3 col-lg-offset-0">
-		 	<h3 id="numberQuestion"> 1 </h3>
-		 </div>
-		 <div class="col-sm-12"></div>
-	    </div> 
-	</div>
+<div class="row">
+	
 </div>
 </div>
 </main>
@@ -110,7 +69,47 @@
         <p class="text-muted">Wentworth Institute of Technology</p>
       </div>
 </footer>
+  
+<div id="settingsModal" class="modal fade" role="dialog">
+   <div id="settingsModal" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Settings</h4>
+        </div>
+        <div class="modal-body">
+          <form method="post" action="register.php" id="register-form">
+            <fieldset>
+              <h4>Change Password</h4>
+              <label>Enter Password:</label> <input type="password" name="password" size="25" class="required"/><br/>
+              <label>Confirm Password:</label> <input type="password" name="confirmPassword" size="25" class="required"/>
+				<br><br>
+              <h4>Change Your Skill Level:</h4>
+
+                <input type="radio" name="skill" value="beginner" class="required"/> Beginner
+                <input type="radio" name="skill" value="intermediate" class="required"/> Intermediate
+                <input type="radio" name="skill" value="expert" class="required"/> Expert<br/><br/>
+              <div class="rectangle centered"> 
+               <h4>Reset Progress</h4>
+               <div class="progress col-sm-8 col-xs-8">
+  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+    60%
+  </div>
+</div>
+<div class="col-sm-2 col-sm-offset-2 col-xs-2 col-xs-offset-1">
+           	    <button type="button" class="btn btn-danger">Reset</button>
+               </div>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" type=submit class="btn btn-default" data-dismiss="modal">Save Changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
    
-<script src="KanjiQuiz.js"></script>   
 </body>
 </html>
