@@ -1,10 +1,60 @@
+<?php
+require 'database.php';
+
+function getRandomKanji() {
+	$sql = "SELECT COUNT(*) FROM `kanji` LIMIT 1";
+	$result = db_select($sql);
+
+	// Checks for mysqli error
+	if($result === false) {
+		$error = db_error();
+		echo $error;
+	}
+	else {
+		// Checks for result
+		if(!empty($result)) {
+			$max = $result[0]['COUNT(*)'];
+			$id = rand(1,$max);
+			return getKanji($id);
+			//return array($kanji, $english);
+		}
+		else {
+			echo "Please try again.<br>";
+		}
+	}
+}
+
+function getKanji($id) {
+	$sql = "SELECT * FROM `kanji` WHERE (`kanji_id`=" . db_quote($id) . ") LIMIT 1";
+	$result = db_select($sql);
+
+	// Checks for mysqli error
+	if($result === false) {
+		$error = db_error();
+		echo $error;
+	}
+	else {
+		// Checks for result
+		if(!empty($result)) {
+			$kanji = $result[0]['kanji_jap'];
+			$english = $result[0]['kanji_eng'];
+			return array($kanji, $english);
+		}
+		else {
+			echo "Invalid Kanji. Please try again.<br>";
+		}
+	}
+}
+
+?>
 <!doctype html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8" />
 <title>Dashboard</title>
 
 <link rel="stylesheet" href="css/bootstrap.min.css" media="screen">
+<link rel="stylesheet" href="css/style.css" media="screen">
 
 
 <script src="http://code.jquery.com/jquery.js"></script>
@@ -63,7 +113,14 @@
 <div class="row">   
 	<div class="jumbotron col-8 col-sm-offset-0 col-lg-4 col-lg-offset-4">
 		<div class="container" align="center">
-			<img id="Kanji" class="img-responsive img-center" src="Kanji.gif">
+			<div class="kanji" align="center">
+			<?php 
+				$kanji = getRandomKanji();
+				echo $kanji[0];
+				$english = $kanji[1];
+				echo $english;
+			?>
+			</div>
  			<br><br>
  		</div>
 

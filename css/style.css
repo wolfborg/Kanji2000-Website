@@ -1,5 +1,14 @@
+@charset "utf-8";
+
+@font-face { font-family: GenEiKoburiMin-R; src: url('fonts/GenEiKoburiMin-2.1/GenEiKoburiMin-R.otf'); } 
+
 .about {
 	font-family: arial;
 	font-size: 32px;
 	text-align: center;
+}
+
+.kanji {
+	font-family: GenEiKoburiMin-R;
+	font-size: 100px;
 }

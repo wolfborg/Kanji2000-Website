@@ -11,6 +11,7 @@ function db_connect() {
 		$config = parse_ini_file("/kanji2000.ini");
 		// Creates connection
 		$connection = mysqli_connect("localhost", $config["dbusername"], $config["dbpassword"], $config["dbname"]);
+		$connection->set_charset("utf8");
 	}
 
 	// Checks connection
