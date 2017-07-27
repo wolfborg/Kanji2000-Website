@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="css/bootstrap.min.css" media="screen">
 
 
-<script src="http://code.jquery.com/jquery.js"></script>
+<script src="https://code.jquery.com/jquery.js"></script>
 <script src="js/bootstrap.min.js"></script>
 
 <style>
