@@ -1,0 +1,62 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "b7d8fd8a7101457faf88c733fe114205",
+    "packages": [
+        {
+            "name": "kanti/mcrypt",
+            "version": "1.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Kanti/MCrypt.git",
+                "reference": "7b2b0806acef62f90c22dedfd5f291008dec72f8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Kanti/MCrypt/zipball/7b2b0806acef62f90c22dedfd5f291008dec72f8",
+                "reference": "7b2b0806acef62f90c22dedfd5f291008dec72f8",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Kanti\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kanti",
+                    "homepage": "http://kanti.de",
+                    "role": "Developer"
+                },
+                {
+                    "name": "kafene",
+                    "homepage": "https://github.com/kafene",
+                    "role": "Initial Developer"
+                }
+            ],
+            "description": "Simpel Static mcrypt helper object",
+            "time": "2014-12-19T07:51:34+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "php": "^5.6"
+    },
+    "platform-dev": []
+}
