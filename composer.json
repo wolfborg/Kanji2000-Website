@@ -1,0 +1,8 @@
+{
+    "name": "wenworth/kanji2000",
+    "description": "Web application to help learn Kanji",
+    "require": {
+        "php": "^5.6",
+        "kanti/mcrypt": "^1.4"
+    }
+}
