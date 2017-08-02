@@ -10,7 +10,8 @@ function db_connect() {
 		// Loads configuration file
 		$config = parse_ini_file("/kanji2000.ini");
 		// Creates connection
-		$connection = mysqli_connect("us-cdbr-iron-east-03.cleardb.net", $config["b13b2e44efc2d0"], $config["d088ff6f"], $config["heroku_9685adbe3cfbf48"]);
+		//$connection = mysqli_connect("us-cdbr-iron-east-03.cleardb.net", $config["b13b2e44efc2d0"], $config["d088ff6f"], $config["heroku_9685adbe3cfbf48"]);
+		$connection = mysqli_connect("localhost", $config["dbusername"], $config["dbpassword"], $config["dbname"]);
 		$connection->set_charset("utf8");
 	}
 
