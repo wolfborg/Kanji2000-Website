@@ -57,7 +57,7 @@ function getKanji($id) {
 <link rel="stylesheet" href="css/style.css" media="screen">
 
 
-<script src="http://code.jquery.com/jquery.js"></script>
+<script src="https://code.jquery.com/jquery.js"></script>
 <script src="js/bootstrap.min.js"></script>
 
 <style>
