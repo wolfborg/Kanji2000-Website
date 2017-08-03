@@ -48,11 +48,19 @@
 
 <div class="container" style="height: 90%">
 	<div class="row">
-		<div class="jumbotron col-sm-8 col-lg-10 col-lg-offset-1 col-sm-offset-2">
+	  <div class="jumbotron col-sm-8 col-lg-10 col-lg-offset-1 col-sm-offset-2">
             <h1>Kanji 2000 Dashboard!</h1>
             <p>Welcome to Kanji 2000! Blah Blah Blah Blah Stuff </p>
-		</div>
+	  </div>
+	
+		
 	</div>
+	
+	<div class="row">
+	  <button>Start Quiz</button>
+	
+	</div>
+
 </div>
   
 <div class="container" style="height: 90%">
