@@ -114,13 +114,15 @@ function getKanji($id) {
 	<div class="jumbotron col-8 col-sm-offset-0 col-lg-4 col-lg-offset-4">
 		<div class="container" align="center">
 			<div class="kanji" align="center">
-				<h1 id="kanji">
+			
+			<h1 id="kanji">
 			<?php 
 				$kanji = getRandomKanji();
-				echo $kanji[0] . "|";
+				echo $kanji[0];
 			?>
-				</h1>
-				<h1>	
+			</h1>
+			
+			<h1>	
 				<?php 
 				$english = $kanji[1];
 			 	echo $english;
