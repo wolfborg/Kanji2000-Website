@@ -52,9 +52,13 @@
             <h1>Kanji 2000 Dashboard!</h1>
             <p>Welcome to Kanji 2000! Blah Blah Blah Blah Stuff </p>
 	  </div>
-	  <button>Start Quiz</button>
-
+	
 		
+	</div>
+	
+	<div class="row">
+	  <button>Start Quiz</button>
+	
 	</div>
 
 </div>
