@@ -84,8 +84,8 @@ D.addEventListener("click",function(e){
 	
 function setOptions(answer,kan){
 	alert("setting options");
-	//document.getElementById("kanji").innerHTML = kan;
-	//document.getElementById("english").innerHTML = answer;
+	document.getElementById("kanji").innerHTML = kan;
+	 document.getElementById("english").innerHTML = answer;
 
 
 	switch(Math.floor((Math.random() * 4) + 1)){
