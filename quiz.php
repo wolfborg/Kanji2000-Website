@@ -101,7 +101,7 @@ function getKanji($id) {
 <main>  
 <div class="container" style="height: 90%">
 <div class="row">   
-	<div class="jumbotron col-8 col-sm-offset-0 col-lg-4 col-lg-offset-4" id="question">
+	<question class="jumbotron col-8 col-sm-offset-0 col-lg-4 col-lg-offset-4">
 		<div class="container" align="center">
 			<div class="el_kanji" id="el_kanji" align="center">
 			
@@ -154,7 +154,7 @@ function getKanji($id) {
 		 </div>
 		 <div class="col-sm-12"></div>
 	    </div> 
-	</div>
+	</question>
 </div>
 </div>
 </main>
