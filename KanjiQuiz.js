@@ -13,7 +13,7 @@ bar = document.getElementById("bar")
 var kanji = document.getElementById("kanji").innerHTML;
 var answer = document.getElementById("english").innerHTML;
 
-alert(kanji + ":" + answer);
+//alert(kanji + ":" + answer);
 
 var currentAnswer="A";
 var wrongAnswer = 0;
@@ -85,6 +85,27 @@ D.addEventListener("click",function(e){
 
 }
 );
+	
+function setOptions(answer){
+	switch(Math.floor((Math.random() * 4) + 1)){
+		case 1:
+			A.value = answer;
+			break;
+		case 2:
+			B.value = answer;
+			break;
+			
+		case 3:
+			C.value = answer;
+			break;
+			
+		case 4:
+			D.value = answer;
+			break;
+			
+			
+	}
+}
 	
 function isCorrect(answer){
 	return answer == currentAnswer;
