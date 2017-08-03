@@ -104,7 +104,7 @@ function getKanji($id) {
 	<div class="row">
 		<div class="jumbotron col-sm-8 col-lg-10 col-lg-offset-1 col-sm-offset-2">
             <h1>Kanji 2000!</h1>
-            <p>Welcome to Kanji 2000! Blah Blah Blah Blah Stuff </p>
+            <p>Welcome to Quiz</p>
 		</div>
 	</div>
 </div>
