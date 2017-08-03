@@ -144,9 +144,11 @@ function nextQuestion(e){
 }
 	
 function randomKanji(){
-return "<?php $kanji = getRandomKanji(); echo $kanji[0]; $english = $kanji[1]; echo $english;?>";
 	setOptions();
+	return "<?php $kanji = getRandomKanji(); echo $kanji[0]; $english = $kanji[1]; echo $english;?>";
 }
+	
+	
 
 	
 function quizOver(){
