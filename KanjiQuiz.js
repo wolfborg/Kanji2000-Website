@@ -107,6 +107,7 @@ function setOptions(answer){
 }
 	
 function isCorrect(answer){
+	alert(answer + ":" + currentAnswer);
 	return answer == currentAnswer;
 }
 	
