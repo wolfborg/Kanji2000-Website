@@ -53,7 +53,7 @@
             <p>Welcome to Kanji 2000! Blah Blah Blah Blah Stuff </p>
 		</div>
 		
-		
+		<button>Start Quiz</button>
 		
 	</div>
 </div>
