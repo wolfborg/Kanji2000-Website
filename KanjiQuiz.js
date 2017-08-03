@@ -137,7 +137,7 @@ function isCorrect(answer){
 function nextQuestion(e){
 	$("#el_kanji").load(location.href + " #el_kanji");
 	//answer = document.getElementById("english").innerHTML;
-
+	document.getElementById(kanji).innerHTML=answer +"";
 	setOptions(answer);
 	
 	wrongAnswer = 0;
