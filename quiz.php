@@ -149,7 +149,9 @@ function getKanji($id) {
 		<div class="row" align="center">
 
 		 
+		 <div class="col-sm-6 col-lg-12 col-sm-offset-3 col-md-offset-3 col-lg-offset-0">
 		 	<h3 id="numberQuestion"> 1 </h3>
+		 </div>
 		 <div class="col-sm-12"></div>
 	    </div> 
 	</div>
