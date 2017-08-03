@@ -71,7 +71,6 @@ function getKanji($id) {
 </head>
 
 <body style="padding-top: 0px">
-<p>&nbsp;</p>  
 <header>
   <nav class="navbar navbar-default">
    	<div class="container-fluid">
