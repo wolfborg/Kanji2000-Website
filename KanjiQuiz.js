@@ -27,7 +27,6 @@ var questionLabel = document.getElementById("numberQuestion");
 	
 var percent = (100/numberQuestions);
 bar.style.width = percent + "%";
-setOptions(answer);
 
 A.addEventListener("click",function(e){
 	if(isCorrect("A")){
@@ -89,8 +88,6 @@ D.addEventListener("click",function(e){
 function setOptions(answer){
 	kanji = document.getElementById("kanji").innerHTML;
     answer = document.getElementById("english").innerHTML;
-			$("#el_kanji").load(location.href + " #el_kanji");
-
 	switch(Math.floor((Math.random() * 4) + 1)){
 		case 1:
 			A.innerHTML = answer + "";
@@ -137,9 +134,8 @@ function isCorrect(answer){
 }
 	
 function nextQuestion(e){
-	//$("#el_kanji").load(location.href + " #el_kanji");
+	$("#el_kanji").load(location.href + " #el_kanji");
 	answer = document.getElementById("english").innerHTML;
-	//$("#el_kanji").load(location.href + " #el_kanji");
 
 	setOptions(answer);
 	
