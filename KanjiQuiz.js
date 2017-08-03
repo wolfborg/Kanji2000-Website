@@ -167,7 +167,7 @@ function lastQuestion(){
 }
 
 function randomKanji(){
-	setOptions();
+	start();
 	return "<?php $kanji = getRandomKanji(); echo $kanji[0]; $english = $kanji[1]; echo $english;?>";
 }
 	
