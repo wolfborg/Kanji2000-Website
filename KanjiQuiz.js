@@ -13,7 +13,6 @@ bar = document.getElementById("bar")
 var kanji = document.getElementById("kanji").innerHTML;
 var answer = document.getElementById("english").innerHTML;
 
-alert("load");
 var currentAnswer;
 var wrongAnswer = 0;
 
@@ -84,13 +83,12 @@ D.addEventListener("click",function(e){
 );
 	
 function setOptions(answer){
-	
+	alert("setting options");
 			A.innerHTML = randomAnswer();
 			B.innerHTML = randomAnswer();
 			C.innerHTML = randomAnswer();
 			D.innerHTML = randomAnswer();
 	
-	answer=document.getElementById("english").innerHTML;
 	
 	switch(Math.floor((Math.random() * 4) + 1)){
 		case 1:
