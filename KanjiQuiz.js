@@ -17,7 +17,7 @@ var currentAnswer;
 var wrongAnswer = 0;
 
 var numberQuestions = 10;
-var onQuestion = 0;
+var onQuestion = 1;
 
 var questionLabel = document.getElementById("numberQuestion");
 	
@@ -84,12 +84,6 @@ D.addEventListener("click",function(e){
 	
 function setOptions(answer){
 	alert("setting options");
-			A.innerHTML = randomAnswer();
-			B.innerHTML = randomAnswer();
-			C.innerHTML = randomAnswer();
-			D.innerHTML = randomAnswer();
-	
-	
 	switch(Math.floor((Math.random() * 4) + 1)){
 		case 1:
 			A.innerHTML = answer + "";
@@ -121,7 +115,7 @@ function setOptions(answer){
 			break;
 			
 	}
-	$("#el_kanji").load(location.href + " #el_kanji");
+	alert(answer + ":" + currentAnswer);
 
 }
 	
@@ -157,13 +151,13 @@ function nextQuestion(e){
 	
 
 	
+	$("#el_kanji").load(location.href + " #el_kanji");
 
 
 	alert("New Question Answer" + answer);
+	setOptions
 		kanji =  document.getElementById("kanji").innerHTML;
-	answer = document.getElementById("english").innerHTML
-	setOptions();
-
+	answer = document.getElementById("english").innerHTML;
 
 
 	//location.reload();
