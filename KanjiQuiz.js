@@ -135,6 +135,9 @@ function isCorrect(answer){
 }
 	
 function nextQuestion(e){
+	$("#el_kanji").load(location.href + " #el_kanji");
+	answer = document.getElementById("english").innerHTML;
+	setOptions(answer);
 	wrongAnswer = 0;
 	onQuestion++
 	questionLabel.innerHTML = "<h3>" + (1+onQuestion) + "</h3>";
@@ -155,11 +158,7 @@ function nextQuestion(e){
 	}
 	
 
-	$("#el_kanji").load(location.href + " #el_kanji");
-	answer = document.getElementById("english").innerHTML;
-	setOptions(answer);
-	setOptions(answer);
-
+	
 
 	//location.reload();
 
