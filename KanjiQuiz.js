@@ -154,8 +154,10 @@ function nextQuestion(e){
 	D.removeAttribute("disabled");
 	}
 	
-	$("#el_kanji").load(location.href + " #el_kanji");
+
 	setOptions();
+
+	$("#el_kanji").load(location.href + " #el_kanji");
 	
 	//location.reload();
 
