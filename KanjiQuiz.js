@@ -89,6 +89,7 @@ D.addEventListener("click",function(e){
 function setOptions(answer){
 	switch(Math.floor((Math.random() * 4) + 1)){
 		case 1:
+			alert("test");
 			A.value = answer;
 			break;
 		case 2:
@@ -102,7 +103,6 @@ function setOptions(answer){
 		case 4:
 			D.value = answer;
 			break;
-			
 			
 	}
 }
