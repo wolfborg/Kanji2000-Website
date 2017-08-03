@@ -155,7 +155,7 @@ function nextQuestion(e){
 
 
 	alert("New Question Answer" + answer);
-	setOptions
+	setOptions();
 		kanji =  document.getElementById("kanji").innerHTML;
 	answer = document.getElementById("english").innerHTML;
 
