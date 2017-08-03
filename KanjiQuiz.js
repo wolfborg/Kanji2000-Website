@@ -137,8 +137,8 @@ function nextQuestion(e){
 	C.removeAttribute("disabled");
 	D.removeAttribute("disabled");
 	}
-	document.getElementById("el_kanji").ownerDocument.location.reload;
-	//location.reload();
+
+	location.reload();
 
 
 
