@@ -13,16 +13,13 @@ bar = document.getElementById("bar")
 var kanji = document.getElementById("kanji").innerHTML;
 var answer = document.getElementById("english").innerHTML;
 
-//alert(kanji + ":" + answer);
 
 var currentAnswer;
 var wrongAnswer = 0;
 
 var numberQuestions = 10;
 var onQuestion = 0;
-//onQuestion = localStorage.getItem("onQuestion");
-//localStorage.setItem("onQuestion", onQuestion);
-//alert(localStorage.getItem("onQuestion"));
+
 var questionLabel = document.getElementById("numberQuestion");
 	
 var percent = (100/numberQuestions);
@@ -87,8 +84,6 @@ D.addEventListener("click",function(e){
 );
 	
 function setOptions(answer){
-	//kanji = document.getElementById("kanji").innerHTML;
-    //answer = document.getElementById("english").innerHTML;
 	switch(Math.floor((Math.random() * 4) + 1)){
 		case 1:
 			A.innerHTML = answer + "";
@@ -96,7 +91,6 @@ function setOptions(answer){
 			B.innerHTML = randomAnswer();
 			C.innerHTML = randomAnswer();
 			D.innerHTML = randomAnswer();
-
 			break;
 		case 2:
 			B.innerHTML = answer + "";
@@ -104,16 +98,14 @@ function setOptions(answer){
 			A.innerHTML = randomAnswer();
 			C.innerHTML = randomAnswer();
 			D.innerHTML = randomAnswer();
-			break;
-			
+			break;	
 		case 3:
 			C.innerHTML = answer + "";
 			currentAnswer = "C";
 			B.innerHTML = randomAnswer();
 			D.innerHTML = randomAnswer();
 			A.innerHTML = randomAnswer();
-			break;
-			
+			break;	
 		case 4:
 			D.innerHTML = answer + "";
 			currentAnswer = "D";
@@ -135,11 +127,12 @@ function isCorrect(answer){
 }
 	
 function nextQuestion(e){
-	answer = document.getElementById("english").innerHTML;
 	
+	$("#el_kanji").load(location.href + " #el_kanji");
+	answer = document.getElementById("english").innerHTML;
+
 	setOptions(answer);
 
-	$("#el_kanji").load(location.href + " #el_kanji");
 
 
 	
