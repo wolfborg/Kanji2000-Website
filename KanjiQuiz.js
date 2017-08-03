@@ -11,9 +11,8 @@ D = document.getElementById("D");
 bar = document.getElementById("bar")
 
 
-var kanji;
-var answer;
-
+var kanji = document.getElementById("kanji").innerHTML;
+var answer = document.getElementById("english").innerHTML;
 var currentAnswer;
 var wrongAnswer = 0;
 
