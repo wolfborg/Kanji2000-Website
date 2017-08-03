@@ -21,13 +21,13 @@ function getRandomKanji() {
 		else {
 			echo "Please try again.<br>";
 		}
-	}
+	}//Test
 }
 
 function getKanji($id) {
 	$sql = "SELECT * FROM `kanji` WHERE (`kanji_id`=" . db_quote($id) . ") LIMIT 1";
 	$result = db_select($sql);
-
+//
 	// Checks for mysqli error
 	if($result === false) {
 		$error = db_error();
