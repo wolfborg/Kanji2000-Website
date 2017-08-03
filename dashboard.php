@@ -1,3 +1,45 @@
+<?php
+require 'database.php';
+
+session_start();
+if(!isset($_SESSION['user_id'])) {
+  header("location: index.php");
+}
+
+function printUserInfo() {
+  $id = $_SESSION['user_id'];
+  $sql = "SELECT * FROM `users` WHERE (`user_id`=" . db_quote($id) . ") LIMIT 1";
+  $result = db_select($sql);
+
+  // Checks for mysqli error
+  if($result === false) {
+    $error = db_error();
+    echo $error;
+  }
+  else {
+    // Checks for result
+    if(!empty($result)) {
+      $username = $result[0]['user_name'];
+      $firstname = $result[0]['user_first_name'];
+      $lastname = $result[0]['user_first_name'];
+      $level = $result[0]['user_level'];
+      $progress = $result[0]['user_progress'];
+      //return array($kanji, $english);
+      echo "<div id='user_info'><br>";
+      echo "Username: " . $username . "<br>";
+      echo "First Name: " . $firstname . "<br>";
+      echo "Last Name: " . $lastname . "<br>";
+      echo "Level: " . $level . "<br>";
+      echo "Progress: " . $progress . "<br>";
+    }
+    else {
+      echo "Invalid User ID. Please try again.<br>";
+    }
+  }
+}
+
+?>
+
 <!doctype html>
 <html>
 <head>
@@ -51,6 +93,10 @@
 	  <div class="jumbotron col-sm-8 col-lg-10 col-lg-offset-1 col-sm-offset-2">
             <h1>Kanji 2000 Dashboard!</h1>
             <p>Welcome to Kanji 2000! Blah Blah Blah Blah Stuff </p>
+            <?php
+              printUserInfo();
+
+            ?>
 	  </div>
 	
 		
