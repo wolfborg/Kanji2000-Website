@@ -30,7 +30,7 @@ bar.style.width = percent + "%";
 setOptions(answer);
 
 A.addEventListener("click",function(e){
-	if(isCorrect("A")){
+	if(isCorrect(A.innerHTML)){
 		nextQuestion();
 	}else{
 		this.setAttribute("disabled","disbaled");
@@ -43,7 +43,7 @@ A.addEventListener("click",function(e){
 );
 	
 B.addEventListener("click",function(e){
-	if(isCorrect("B")){
+	if(isCorrect(B.innerHTML)){
 		nextQuestion();
 	}else{
 		this.setAttribute("disabled","disbaled");
@@ -57,7 +57,7 @@ B.addEventListener("click",function(e){
 );
 	
 C.addEventListener("click",function(e){
-	if(isCorrect("C")){
+	if(isCorrect(C.innerHTML)){
 		nextQuestion();
 	}else{
 		this.setAttribute("disabled","disbaled");
@@ -72,7 +72,7 @@ C.addEventListener("click",function(e){
 );
 	
 D.addEventListener("click",function(e){
-	if(isCorrect("D")){
+	if(isCorrect(D.innerHTML)){
 		nextQuestion();
 	}else{
 		this.setAttribute("disabled","disbaled");
