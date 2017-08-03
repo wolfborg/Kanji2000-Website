@@ -153,12 +153,12 @@ function nextQuestion(e){
 	D.removeAttribute("disabled");
 	}
 	
-	kanji = document.getElementById("kanji").innerHTML;
 	
 	$("#el_kanji").load(location.href + " #el_kanji");
 
 	answer = document.getElementById("english").innerHTML;
 
+	kanji = document.getElementById("kanji").innerHTML;
 
 	
 	alert("New Question Answer" + answer);
