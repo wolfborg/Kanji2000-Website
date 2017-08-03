@@ -116,7 +116,7 @@ function getKanji($id) {
 			<div class="kanji" align="center">
 			<?php 
 				$kanji = getRandomKanji();
-				echo $kanji[0];
+				echo $kanji[0] + "|" ;
 				$english = $kanji[1];
 				echo $english;
 			?>
