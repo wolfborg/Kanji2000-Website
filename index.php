@@ -41,7 +41,6 @@
             </form>
            
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="#">About</a></li>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                   Learn Kanji!<span class="caret"></span>
@@ -64,7 +63,7 @@
       <div class="row">
         <div class="jumbotron col-sm-8 col-sm-offset-0">
           <h1>Kanji 2000!</h1>
-          <p>Welcome to Kanji 2000! Blah Blah Blah Blah Stuff </p>
+          <p>Welcome to Kanji 2000! The aim of this website it to offer a place for people just beginning to learn japanese to start learning the essential 2000 kanji characters, or allow for more experienced students to brush up on the basics.</p>
         </div>
         <img class="col-sm-4 img-responsive img-center" src="Kanji.gif">
       </div>
@@ -75,7 +74,7 @@
       <div class="row">
         <div class="jumbotron col-sm-8 col-sm-offset-0">
           <h1>Learn Quick!</h1>
-          <p>Insert Stuff Here!</p>
+          <p>Take our quiz and track your progress as you begin to learn Kanji.</p>
           <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#loginModal">Learn Now!</button>   
         </div>
       </div>
