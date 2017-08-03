@@ -14,18 +14,14 @@
 }
 
 
-
-@keyframes slideInFromLeft {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(0);
-  }
+.fadein {
+    opacity: 0;
+    -moz-transition: opacity 1.5s;
+    -webkit-transition: opacity 1.5s;
+    -o-transition: opacity 1.5s;
+    transition: opacity 1.5s;
 }
 
-.el_kanji {  
-  /* This section calls the slideInFromLeft animation we defined above */
-  animation: 1s ease-out 0s 1 slideInFromLeft;
-  padding: 30px;
+#el_kanji.loaded .fadein {
+    opacity: 1;
 }
