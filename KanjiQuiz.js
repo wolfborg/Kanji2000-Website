@@ -20,8 +20,8 @@ var wrongAnswer = 0;
 
 var numberQuestions = 10;
 var onQuestion = 0;
-onQuestion = localStorage.getItem("onQuestion");
-localStorage.setItem("onQuestion", onQuestion);
+//onQuestion = localStorage.getItem("onQuestion");
+//localStorage.setItem("onQuestion", onQuestion);
 //alert(localStorage.getItem("onQuestion"));
 var questionLabel = document.getElementById("numberQuestion");
 	
