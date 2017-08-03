@@ -17,7 +17,7 @@ var currentAnswer;
 var wrongAnswer = 0;
 
 var numberQuestions = 10;
-var onQuestion = 1;
+var onQuestion = 0;
 
 var questionLabel = document.getElementById("numberQuestion");
 	
@@ -121,6 +121,7 @@ function setOptions(answer){
 			break;
 			
 	}
+	$("#el_kanji").load(location.href + " #el_kanji");
 
 }
 	
@@ -156,7 +157,6 @@ function nextQuestion(e){
 	
 
 	
-	$("#el_kanji").load(location.href + " #el_kanji");
 
 
 	alert("New Question Answer" + answer);
