@@ -163,7 +163,7 @@ function nextQuestion(e){
 	answer = document.getElementById("english").innerHTML;
 
 	setOptions(answer);
-
+   alert("New Question Answer" + answer);
 
 
 	//location.reload();
