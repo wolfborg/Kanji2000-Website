@@ -21,7 +21,7 @@ function printUserInfo() {
     if(!empty($result)) {
       $username = $result[0]['user_name'];
       $firstname = $result[0]['user_first_name'];
-      $lastname = $result[0]['user_first_name'];
+      $lastname = $result[0]['user_last_name'];
       $level = $result[0]['user_level'];
       $progress = $result[0]['user_progress'];
       //return array($kanji, $english);
