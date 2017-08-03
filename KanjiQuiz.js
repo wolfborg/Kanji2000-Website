@@ -109,7 +109,10 @@ function nextQuestion(e){
 	C.removeAttribute("disabled");
 	D.removeAttribute("disabled");
 	}
-	location.reload();
+	document.getElementById("kanji").contentWindow.location.reload(true);
+	document.getElementById("english").contentWindow.location.reload(true);
+
+
 
 
 }
