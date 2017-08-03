@@ -15,7 +15,6 @@ var answer = document.getElementById("english").innerHTML;
 
 //alert(kanji + ":" + answer);
 
-var currentAnswer="A";
 var wrongAnswer = 0;
 
 var numberQuestions = 10;
@@ -106,7 +105,7 @@ function setOptions(answer){
 	}
 }
 	
-function isCorrect(answer){
+function isCorrect(currentAanswer){
 	alert(answer + ":" + currentAnswer);
 	return answer == currentAnswer;
 }
