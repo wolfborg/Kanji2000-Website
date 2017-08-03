@@ -11,7 +11,7 @@ bar = document.getElementById("bar")
 
 
 var kanji = document.getElementById("kanji");
-alert(kanji.value);
+alert(kanji.text);
 
 var currentAnswer="A";
 var wrongAnswer = 0;
