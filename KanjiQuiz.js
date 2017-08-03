@@ -162,6 +162,8 @@ function nextQuestion(e){
 
 	
 	setOptions(answer,kanji);
+	document.getElementById("kanji").innerHTML = kanji;
+	document.getElementById("english").innerHTML = answer;
 	
 
 
