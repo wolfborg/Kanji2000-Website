@@ -87,6 +87,7 @@ D.addEventListener("click",function(e){
 );
 	
 function isCorrect(answer){
+	location.reload();
 	return answer == currentAnswer;
 }
 	
