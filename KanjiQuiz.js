@@ -84,6 +84,10 @@ D.addEventListener("click",function(e){
 );
 	
 function setOptions(answer){
+			A.innerHTML = randomAnswer();
+			B.innerHTML = randomAnswer();
+			C.innerHTML = randomAnswer();
+			D.innerHTML = randomAnswer();
 	switch(Math.floor((Math.random() * 4) + 1)){
 		case 1:
 			A.innerHTML = answer + "";
@@ -132,7 +136,6 @@ function nextQuestion(e){
 	kanji =  document.getElementById("kanji").innerHTML;
 	answer = document.getElementById("english").innerHTML;
 
-	setOptions(answer);
 	setOptions(answer);
 
 
