@@ -153,11 +153,12 @@ function nextQuestion(e){
 	
 	$("#el_kanji").load(location.href + " #el_kanji");
 
+	kanji =  document.getElementById("kanji").innerHTML;
+	answer = document.getElementById("english").innerHTML;
 
 	alert("New Question Answer" + answer);
 	setOptions();
-		kanji =  document.getElementById("kanji").innerHTML;
-	answer = document.getElementById("english").innerHTML;
+	
 
 
 	//location.reload();
