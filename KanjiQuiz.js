@@ -154,10 +154,10 @@ function nextQuestion(e){
 	}
 	
 	kanji = document.getElementById("kanji").innerHTML;
-	answer = document.getElementById("english").innerHTML;
 	
 	$("#el_kanji").load(location.href + " #el_kanji");
 
+	answer = document.getElementById("english").innerHTML;
 
 
 	
