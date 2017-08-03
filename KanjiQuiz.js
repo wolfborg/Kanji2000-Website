@@ -10,7 +10,8 @@ D = document.getElementById("D");
 bar = document.getElementById("bar")
 
 
-var kanji = document.getElementById("Kanji");
+var kanji = document.getElementById("kanji");
+alert(kanji.text);
 
 var currentAnswer="A";
 var wrongAnswer = 0;
@@ -20,7 +21,6 @@ var onQuestion = 0;
 //onQuestion = localStorage.getItem("onQuestion");
 //localStorage.setItem("onQuestion", onQuestion);
 //alert(localStorage.getItem("onQuestion"));
-alert(document.getElementById("kanji"));
 var questionLabel = document.getElementById("numberQuestion");
 	
 var percent = (100/numberQuestions);
@@ -126,5 +126,7 @@ function lastQuestion(){
 	}
 	
 }
+	
+
 	
 }
