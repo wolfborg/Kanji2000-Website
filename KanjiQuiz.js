@@ -17,7 +17,7 @@ var currentAnswer;
 var wrongAnswer = 0;
 
 var numberQuestions = 10;
-var onQuestion = 0;
+var onQuestion = 1;
 
 var questionLabel = document.getElementById("numberQuestion");
 	
