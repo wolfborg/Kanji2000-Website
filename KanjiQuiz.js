@@ -10,8 +10,8 @@ D = document.getElementById("D");
 bar = document.getElementById("bar")
 
 
-var kanji = document.getElementById("kanji").innerHTML;
-var answer = document.getElementById("english").innerHTML;
+var kanji;
+var answer;
 
 var currentAnswer;
 var wrongAnswer = 0;
@@ -83,6 +83,8 @@ D.addEventListener("click",function(e){
 );
 	
 function setOptions(answer,kan){
+	 this.kanji = document.getElementById("kanji").innerHTML;
+     this.answer = document.getElementById("english").innerHTML;
 	alert("setting options");
 	document.getElementById("kanji").innerHTML = kan;
 	 document.getElementById("english").innerHTML = answer;
