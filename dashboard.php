@@ -48,7 +48,7 @@ function printUserInfo() {
 
 <link rel="stylesheet" href="css/bootstrap.min.css" media="screen">
 
-
+<script type="text/javascript" src="settings_validation.js"></script>
 <script src="https://code.jquery.com/jquery.js"></script>
 <script src="js/bootstrap.min.js"></script>
 
@@ -133,7 +133,7 @@ function printUserInfo() {
           <h4 class="modal-title">Settings</h4>
         </div>
         <div class="modal-body">
-          <form method="post" action="register.php" id="register-form">
+          <form method="post" action="settings.php" id="settings-form">
             <fieldset>
               <h4>Change Password</h4>
               <label>Enter Password:</label> <input type="password" name="password" size="25" class="required"/><br/>
@@ -153,13 +153,11 @@ function printUserInfo() {
 </div>
 <div class="col-sm-2 col-sm-offset-2 col-xs-2 col-xs-offset-1">
            	    <button type="button" class="btn btn-danger">Reset</button>
+                <input name="settings" type=submit class="btn btn-default" value="Save Changes"/>
                </div>
               </div>
             </fieldset>
           </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" type=submit class="btn btn-default" data-dismiss="modal">Save Changes</button>
         </div>
       </div>
     </div>
