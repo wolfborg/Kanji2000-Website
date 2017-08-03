@@ -1,6 +1,7 @@
 window.onload = start();
 
 function start(){
+	
 var A,B,C,D,nextButton,backButton,bar;
 
 A = document.getElementById('A');
@@ -23,7 +24,6 @@ var questionLabel = document.getElementById("numberQuestion");
 	
 var percent = (100/numberQuestions);
 bar.style.width = percent + "%";
-setOptions();
 
 A.addEventListener("click",function(e){
 	if(isCorrect("A")){
@@ -81,6 +81,9 @@ D.addEventListener("click",function(e){
 
 }
 );
+
+setOptions();
+
 	
 function setOptions(){
 	 this.kanji = document.getElementById("kanji").innerHTML;
