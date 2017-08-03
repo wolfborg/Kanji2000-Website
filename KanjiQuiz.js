@@ -120,10 +120,7 @@ function setOptions(answer,kan){
 			
 	}
 	alert(answer + ":" + currentAnswer);
-		
-	document.getElementById("kanji").innerHTML = kanji;
-	document.getElementById("english").innerHTML = currentAnswer; 
-
+	
 }
 	
 function randomAnswer(){
