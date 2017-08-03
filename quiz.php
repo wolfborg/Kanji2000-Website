@@ -98,17 +98,7 @@ function getKanji($id) {
     </nav>
 </header>
 
-<main>
-
-<div class="container" style="height: 90%">
-	<div class="row">
-		<div class="jumbotron col-sm-8 col-lg-10 col-lg-offset-1 col-sm-offset-2">
-            <h1>Kanji 2000!</h1>
-            <p>Welcome to Quiz</p>
-		  </div>
-	</div>
- </div>
-  
+<main>  
 <div class="container" style="height: 90%">
 <div class="row">   
 	<div class="jumbotron col-8 col-sm-offset-0 col-lg-4 col-lg-offset-4">
@@ -122,7 +112,7 @@ function getKanji($id) {
 			?>
 			</h1>
 			
-			<h1>	
+			<h1 id="english">	
 				<?php 
 				$english = $kanji[1];
 			 	echo $english;

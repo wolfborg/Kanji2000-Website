@@ -10,8 +10,10 @@ D = document.getElementById("D");
 bar = document.getElementById("bar")
 
 
-var kanji = document.getElementById("kanji");
-alert(kanji.innerHTML);
+var kanji = document.getElementById("kanji").innerHTML;
+var answer = document.getElementById("english").innerHTML;
+
+alert(kanji + ":" + answer);
 
 var currentAnswer="A";
 var wrongAnswer = 0;
