@@ -89,7 +89,9 @@ function setOptions(answer){
 			B.innerHTML = randomAnswer();
 			C.innerHTML = randomAnswer();
 			D.innerHTML = randomAnswer();
-	answer=document.getElementById("kanji").innerHTML;
+	
+	answer=document.getElementById("english").innerHTML;
+	
 	switch(Math.floor((Math.random() * 4) + 1)){
 		case 1:
 			A.innerHTML = answer + "";
