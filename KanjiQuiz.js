@@ -15,6 +15,7 @@ var answer = document.getElementById("english").innerHTML;
 
 //alert(kanji + ":" + answer);
 
+var currentAnswer;
 var wrongAnswer = 0;
 
 var numberQuestions = 10;
@@ -89,23 +90,31 @@ function setOptions(answer){
 	switch(Math.floor((Math.random() * 4) + 1)){
 		case 1:
 			A.innerHTML = answer + "";
+			currentAnswer = "A";
+
 			break;
 		case 2:
 			B.innerHTML = answer + "";
+			currentAnswer = "B";
+
 			break;
 			
 		case 3:
 			C.innerHTML = answer + "";
+						currentAnswer = "C";
+
 			break;
 			
 		case 4:
 			D.innerHTML = answer + "";
+						currentAnswer = "D";
+
 			break;
 			
 	}
 }
 	
-function isCorrect(currentAanswer){
+function isCorrect(answer){
 	alert(answer + ":" + currentAnswer);
 	return answer == currentAnswer;
 }
