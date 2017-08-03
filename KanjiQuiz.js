@@ -20,13 +20,7 @@ var onQuestion = 0;
 //onQuestion = localStorage.getItem("onQuestion");
 //localStorage.setItem("onQuestion", onQuestion);
 //alert(localStorage.getItem("onQuestion"));
-var mult = function(arg1, arg2)
-    $.ajax({
-      url: "quiz.php?action=getRandomKanji"
-    }).done(function(data) {
-      console.log(data);
-    });
-alert(mult);
+alert(document.getElementById("kanji"));
 var questionLabel = document.getElementById("numberQuestion");
 	
 var percent = (100/numberQuestions);
