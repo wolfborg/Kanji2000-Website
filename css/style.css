@@ -14,14 +14,23 @@
 }
 
 
-.fadein {
-    opacity: 0;
-    -moz-transition: opacity 1.5s;
-    -webkit-transition: opacity 1.5s;
-    -o-transition: opacity 1.5s;
-    transition: opacity 1.5s;
+.jumbotron {
+  -webkit-animation: flip 1s;
+  animation: flip 1s;
 }
-
-#el_kanji.loaded .fadein {
-    opacity: 1;
+@-webkit-keyframes flip {
+  from {
+    transform: rotateY(90deg)
+  }
+  to {
+    transform: rotateY(0deg)
+  }
+}
+@keyframes flip {
+  from {
+    transform: rotateY(90deg)
+  }
+  to {
+    transform: rotateY(0deg)
+  }
 }
