@@ -87,7 +87,7 @@ D.addEventListener("click",function(e){
 );
 	
 function setOptions(answer){
-	//alert(Math.floor((Math.random() * 4) + 1));
+	alert(Math.floor((Math.random() * 4) + 1));
 	switch(Math.floor((Math.random() * 4) + 1)){
 		case 1:
 			
