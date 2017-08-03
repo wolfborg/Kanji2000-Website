@@ -115,14 +115,17 @@ function getKanji($id) {
 		<div class="container" align="center">
 			<div class="kanji" align="center">
 				<h1 id="kanji">
-				TEST
 			<?php 
 				$kanji = getRandomKanji();
 				echo $kanji[0] . "|";
-				$english = $kanji[1];
-			 	echo $english;
 			?>
 				</h1>
+				<h1>	
+				<?php 
+				$english = $kanji[1];
+			 	echo $english;
+				?>
+			</h1>
 			</div>
 
  			<br><br>
