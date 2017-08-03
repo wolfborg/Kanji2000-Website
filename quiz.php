@@ -125,18 +125,18 @@ function getKanji($id) {
   
 		<div class="row" align="center">
 			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-				<button id="A" type="button" class="btn btn-lg btn-default customButton">Cat</button>
+				<button id="A" type="button" class="btn btn-lg btn-default customButton" value=""></button>
 			</div>
 			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-				<button id="B" type="button" class="btn btn-lg btn-default customButton">Dog</button>
+				<button id="B" type="button" class="btn btn-lg btn-default customButton" value=""></button>
 			</div>
 			<br><br><br><br>
 
 			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-				<button id="C" type="button" class="btn btn-lg btn-default customButton">Jones</button>
+				<button id="C" type="button" class="btn btn-lg btn-default customButton" value=""></button>
 			</div>
 			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-				<button id="D" type="button" class="btn btn-lg btn-default customButton">Ball</button>
+				<button id="D" type="button" class="btn btn-lg btn-default customButton" value=""></button>
 			</div>
 			<br><br><br><br>
 
