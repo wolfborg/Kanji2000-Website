@@ -155,9 +155,9 @@ function nextQuestion(e){
 	}
 	
 
-	setOptions();
 	$("#el_kanji").load(location.href + " #el_kanji");
 	answer = document.getElementById("english").innerHTML;
+	setOptions(answer);
 
 	//location.reload();
 
