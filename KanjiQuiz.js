@@ -159,7 +159,7 @@ function nextQuestion(e){
 	answer = document.getElementById("english").innerHTML;
 
 	alert("New Question Answer" + answer);
-	setOptions(answer,kan);
+	setOptions(answer,kanji);
 	
 
 
