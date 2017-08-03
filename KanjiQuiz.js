@@ -158,7 +158,7 @@ function nextQuestion(e){
 	
 
 	
-	$("#el_kanji").load(location.href + " #el_kanji");
+	//$("#el_kanji").load(location.href + " #el_kanji");
 	kanji =  document.getElementById("kanji").innerHTML;
 	answer = document.getElementById("english").innerHTML;
 
