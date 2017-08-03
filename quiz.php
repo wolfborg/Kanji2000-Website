@@ -111,6 +111,7 @@ function getKanji($id) {
 				echo $kanji[0];
 			?>
 			</h1>
+			
 			<h1 id="english">	
 				<?php 
 				$english = $kanji[1];

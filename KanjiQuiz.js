@@ -120,6 +120,9 @@ function setOptions(answer,kan){
 			
 	}
 	alert(answer + ":" + currentAnswer);
+		
+	document.getElementById("kanji").innerHTML = kanji;
+	document.getElementById("english").innerHTML = currentAnswer; 
 
 }
 	
@@ -159,9 +162,7 @@ function nextQuestion(e){
 	$("#el_kanji").load(location.href + " #el_kanji");
 
 
-	
-	document.getElementById("kanji").innerHTML = kanji;
-	document.getElementById("english").innerHTML = answer; 
+
 	
 	alert("New Question Answer" + answer);
 	setOptions(answer,kanji);
