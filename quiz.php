@@ -148,7 +148,7 @@ function getKanji($id) {
 		</div>
 		<div class="row" align="center">
 		  <div class="col-sm-6 glyphicon glyphicon-" align="center"><button id="backButton" class=glyphicon-arrow-left></button></div>
-		 <div class="col-sm-6 glyphicon glyphicon-" align="center"><button id="nextButton" onClick="randomKanji()" class=glyphicon-arrow-right></button></div>
+		 <div class="col-sm-6 glyphicon glyphicon-" align="center"><button id="nextButton" onClick="randomKanji();" class=glyphicon-arrow-right></button></div>
 		 <div class="col-sm-6 col-lg-12 col-sm-offset-3 col-md-offset-3 col-lg-offset-0">
 		 	<h3 id="numberQuestion"> 1 </h3>
 		 </div>
