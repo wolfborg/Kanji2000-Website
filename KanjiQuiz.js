@@ -137,11 +137,15 @@ function nextQuestion(e){
 	C.removeAttribute("disabled");
 	D.removeAttribute("disabled");
 	}
+	randomKanji();
+	//location.reload();
 
-	location.reload();
 
 
-
+}
+	
+function randomKanji(){
+return "<?php $kanji = getRandomKanji(); echo $kanji[0]; $english = $kanji[1]; echo $english;?>";
 }
 
 	
