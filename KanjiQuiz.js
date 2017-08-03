@@ -143,12 +143,7 @@ function nextQuestion(e){
 
 }
 	
-function randomKanji(){
-	setOptions();
-	return "<?php $kanji = getRandomKanji(); echo $kanji[0]; $english = $kanji[1]; echo $english;?>";
-}
-	
-	
+
 
 	
 function quizOver(){
@@ -170,3 +165,10 @@ function lastQuestion(){
 
 	
 }
+
+function randomKanji(){
+	setOptions();
+	return "<?php $kanji = getRandomKanji(); echo $kanji[0]; $english = $kanji[1]; echo $english;?>";
+}
+	
+	
