@@ -109,8 +109,8 @@ function nextQuestion(e){
 	C.removeAttribute("disabled");
 	D.removeAttribute("disabled");
 	}
-	document.getElementById("kanji").contentWindow.location.reload(true);
-	document.getElementById("english").contentWindow.location.reload(true);
+	document.getElementById("kanji").reload(true);
+	document.getElementById("english").reload(true);
 
 
 
