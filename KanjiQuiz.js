@@ -137,7 +137,9 @@ function nextQuestion(e){
 	C.removeAttribute("disabled");
 	D.removeAttribute("disabled");
 	}
-	location.reload();
+	$("#el_kanji").load(location.href + " #el_kanji");
+
+	//location.reload();
 
 
 
