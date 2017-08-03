@@ -44,4 +44,22 @@ window.onload = function(){
 			}
 		}
 	});
+
+	var closeButton = document.getElementById("register-close");
+	closeButton.addEventListener("click", function(f){
+		mainForm["firstName"].value = "";
+		mainForm["lastName"].value= "";
+		mainForm["username"].value = "";
+		mainForm["email"].value= "";
+		mainForm["confirmEmail"].value = "";
+		mainForm["password"].value = "";
+		mainForm["confirmPassword"].value="";
+		
+		mainForm["username"].style.borderColor = initialBorder;
+		mainForm["email"].style.borderColor = initialBorder;
+		mainForm["confirmEmail"].style.borderColor = initialBorder;
+		mainForm["password"].style.borderColor = initialBorder;
+		mainForm["confirmPassword"].style.borderColor = initialBorder;
+
+	});
 }

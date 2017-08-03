@@ -1,6 +1,7 @@
 window.onload = start();
 
 function start(){
+	
 var A,B,C,D,nextButton,backButton,bar;
 
 A = document.getElementById('A');
@@ -10,24 +11,19 @@ D = document.getElementById("D");
 bar = document.getElementById("bar")
 
 
-var kanji = document.getElementById("kanji").innerHTML;
-var answer = document.getElementById("english").innerHTML;
-
-//alert(kanji + ":" + answer);
+var kanji;
+var answer;
 
 var currentAnswer;
 var wrongAnswer = 0;
 
 var numberQuestions = 10;
-var onQuestion = 0;
-onQuestion = localStorage.getItem("onQuestion");
-localStorage.setItem("onQuestion", onQuestion);
-//alert(localStorage.getItem("onQuestion"));
+var onQuestion = 1;
+
 var questionLabel = document.getElementById("numberQuestion");
 	
 var percent = (100/numberQuestions);
 bar.style.width = percent + "%";
-setOptions(answer);
 
 A.addEventListener("click",function(e){
 	if(isCorrect("A")){
@@ -85,33 +81,55 @@ D.addEventListener("click",function(e){
 
 }
 );
+
+setOptions();
+
 	
-function setOptions(answer){
+function setOptions(){
+	 this.kanji = document.getElementById("kanji").innerHTML;
+     this.answer = document.getElementById("english").innerHTML;
+	alert("setting options:" + "Answer:" + answer + " Kanji:" + kanji);
+	//document.getElementById("kanji").innerHTML = kan;
+	 //document.getElementById("english").innerHTML = answer;
+
+
 	switch(Math.floor((Math.random() * 4) + 1)){
 		case 1:
 			A.innerHTML = answer + "";
 			currentAnswer = "A";
-
+			B.innerHTML = randomAnswer();
+			C.innerHTML = randomAnswer();
+			D.innerHTML = randomAnswer();
 			break;
 		case 2:
 			B.innerHTML = answer + "";
 			currentAnswer = "B";
-
-			break;
-			
+			A.innerHTML = randomAnswer();
+			C.innerHTML = randomAnswer();
+			D.innerHTML = randomAnswer();
+			break;	
 		case 3:
 			C.innerHTML = answer + "";
-						currentAnswer = "C";
-
-			break;
-			
+			currentAnswer = "C";
+			B.innerHTML = randomAnswer();
+			D.innerHTML = randomAnswer();
+			A.innerHTML = randomAnswer();
+			break;	
 		case 4:
 			D.innerHTML = answer + "";
-						currentAnswer = "D";
-
+			currentAnswer = "D";
+			B.innerHTML = randomAnswer();
+			C.innerHTML = randomAnswer();
+			A.innerHTML = randomAnswer();
 			break;
 			
 	}
+	alert(answer + ":" + currentAnswer);
+	
+}
+	
+function randomAnswer(){
+	return Math.floor((Math.random() * 4) + 1);
 }
 	
 function isCorrect(answer){
@@ -119,6 +137,8 @@ function isCorrect(answer){
 }
 	
 function nextQuestion(e){
+	
+	
 	wrongAnswer = 0;
 	onQuestion++
 	questionLabel.innerHTML = "<h3>" + (1+onQuestion) + "</h3>";
@@ -137,16 +157,28 @@ function nextQuestion(e){
 	C.removeAttribute("disabled");
 	D.removeAttribute("disabled");
 	}
-	location.reload();
+	
+	
+	$("#el_kanji").load(location.href + " #el_kanji");
+
+	answer = document.getElementById("english").innerHTML;
+
+	kanji = document.getElementById("kanji").innerHTML;
+
+	
+	setOptions();
+	document.getElementById("kanji").innerHTML = kanji;
+	document.getElementById("english").innerHTML = answer;
+	
+
+
+	//location.reload();
 
 
 
 }
 	
-function randomKanji(){
-return "<?php $kanji = getRandomKanji(); echo $kanji[0]; $english = $kanji[1]; echo $english;?>";
-	setOptions();
-}
+
 
 	
 function quizOver(){
@@ -168,3 +200,6 @@ function lastQuestion(){
 
 	
 }
+
+	
+	

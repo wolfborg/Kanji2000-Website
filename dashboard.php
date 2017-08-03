@@ -48,7 +48,7 @@ function printUserInfo() {
 
 <link rel="stylesheet" href="css/bootstrap.min.css" media="screen">
 
-
+<script type="text/javascript" src="settings_validation.js"></script>
 <script src="https://code.jquery.com/jquery.js"></script>
 <script src="js/bootstrap.min.js"></script>
 
@@ -92,7 +92,7 @@ function printUserInfo() {
 	<div class="row">
 	  <div class="jumbotron col-sm-8 col-lg-10 col-lg-offset-1 col-sm-offset-2">
             <h1>Kanji 2000 Dashboard!</h1>
-            <p>Welcome to Kanji 2000! Blah Blah Blah Blah Stuff </p>
+            <p>Welcome to Kanji 2000! Here you can view your information, start a quiz, or change your settings. </p>
             <?php
               printUserInfo();
 
@@ -129,11 +129,11 @@ function printUserInfo() {
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <button type="button" id="settings-close" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">Settings</h4>
         </div>
         <div class="modal-body">
-          <form method="post" action="register.php" id="register-form">
+          <form method="post" action="settings.php" id="settings-form">
             <fieldset>
               <h4>Change Password</h4>
               <label>Enter Password:</label> <input type="password" name="password" size="25" class="required"/><br/>
@@ -144,22 +144,17 @@ function printUserInfo() {
                 <input type="radio" name="skill" value="beginner" class="required"/> Beginner
                 <input type="radio" name="skill" value="intermediate" class="required"/> Intermediate
                 <input type="radio" name="skill" value="expert" class="required"/> Expert<br/><br/>
-              <div class="rectangle centered"> 
-               <h4>Reset Progress</h4>
-               <div class="progress col-sm-8 col-xs-8">
-  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-    60%
-  </div>
-</div>
-<div class="col-sm-2 col-sm-offset-2 col-xs-2 col-xs-offset-1">
-           	    <button type="button" class="btn btn-danger">Reset</button>
+                <div class="rectangle centered"> 
+
+                <div class="col-sm-2 col-sm-offset-2 col-xs-2 col-xs-offset-1">
+                <input name="settings" type=submit class="btn btn-default" value="Save Changes"/>
                </div>
               </div>
             </fieldset>
           </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" type=submit class="btn btn-default" data-dismiss="modal">Save Changes</button>
+          <form method="post" action="reset_progress.php" id="reset-form">
+              <input type="submit" name="reset" class="btn btn-danger" value="Reset Progress"/>
+          </form>
         </div>
       </div>
     </div>
