@@ -138,7 +138,7 @@ function nextQuestion(e){
 	//answer = document.getElementById("english").innerHTML;
 	setOptions(answer);
 		$("#el_kanji").load(location.href + " #el_kanji");
-		document.getElementById("kanji").innerHTML=answer +"";
+		document.getElementById("kanji").innerHTML=kanji +"";
 
 
 	
