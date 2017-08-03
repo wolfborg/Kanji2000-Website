@@ -89,18 +89,18 @@ D.addEventListener("click",function(e){
 function setOptions(answer){
 	switch(Math.floor((Math.random() * 4) + 1)){
 		case 1:
-			A.style.text = answer;
+			A.innerHTML = answer + "";
 			break;
 		case 2:
-			B.value = answer;
+			B.innerHTML = answer + "";
 			break;
 			
 		case 3:
-			C.value = answer;
+			C.innerHTML = answer + "";
 			break;
 			
 		case 4:
-			D.value = answer;
+			D.innerHTML = answer + "";
 			break;
 			
 	}
