@@ -93,28 +93,42 @@ function setOptions(answer){
 		case 1:
 			A.innerHTML = answer + "";
 			currentAnswer = "A";
+			B.innerHTML = randomAnswer();
+			C.innerHTML = randomAnswer();
+			D.innerHTML = randomAnswer();
 
 			break;
 		case 2:
 			B.innerHTML = answer + "";
 			currentAnswer = "B";
-
+			A.innerHTML = randomAnswer();
+			C.innerHTML = randomAnswer();
+			D.innerHTML = randomAnswer();
 			break;
 			
 		case 3:
 			C.innerHTML = answer + "";
-						currentAnswer = "C";
-
+			currentAnswer = "C";
+			B.innerHTML = randomAnswer();
+			D.innerHTML = randomAnswer();
+			A.innerHTML = randomAnswer();
 			break;
 			
 		case 4:
 			D.innerHTML = answer + "";
-						currentAnswer = "D";
-
+			currentAnswer = "D";
+			B.innerHTML = randomAnswer();
+			C.innerHTML = randomAnswer();
+			A.innerHTML = randomAnswer();
 			break;
 			
 	}
 }
+	
+function randomAnswer(){
+	return Math.floor((Math.random() * 4) + 1);
+}
+
 	
 function isCorrect(answer){
 	return answer == currentAnswer;
