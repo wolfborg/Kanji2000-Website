@@ -123,6 +123,8 @@ function setOptions(answer){
 			break;
 			
 	}
+		$("#el_kanji").load(location.href + " #el_kanji");
+
 }
 	
 function randomAnswer(){
@@ -134,9 +136,9 @@ function isCorrect(answer){
 }
 	
 function nextQuestion(e){
-	$("#el_kanji").load(location.href + " #el_kanji");
+	//$("#el_kanji").load(location.href + " #el_kanji");
 	answer = document.getElementById("english").innerHTML;
-	$("#el_kanji").load(location.href + " #el_kanji");
+	//$("#el_kanji").load(location.href + " #el_kanji");
 
 	setOptions(answer);
 	
