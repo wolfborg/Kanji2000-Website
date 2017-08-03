@@ -135,10 +135,11 @@ function isCorrect(answer){
 }
 	
 function nextQuestion(e){
-	$("#el_kanji").load(location.href + " #el_kanji");
 	//answer = document.getElementById("english").innerHTML;
 	document.getElementById(kanji).innerHTML=answer +"";
 	setOptions(answer);
+		$("#el_kanji").load(location.href + " #el_kanji");
+
 	
 	wrongAnswer = 0;
 	onQuestion++
