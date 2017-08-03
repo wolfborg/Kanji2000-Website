@@ -85,7 +85,7 @@ D.addEventListener("click",function(e){
 function setOptions(){
 	 this.kanji = document.getElementById("kanji").innerHTML;
      this.answer = document.getElementById("english").innerHTML;
-	alert("setting options");
+	alert("setting options:" + "Answer:" + answer + " Kanji:" + kanji);
 	//document.getElementById("kanji").innerHTML = kan;
 	 //document.getElementById("english").innerHTML = answer;
 
