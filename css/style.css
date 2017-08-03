@@ -12,3 +12,25 @@
 	font-family: GenEiKoburiMin-R;
 	font-size: 100px;
 }
+
+
+.jumbotron {
+  -webkit-animation: flip 1s;
+  animation: flip 1s;
+}
+@-webkit-keyframes flip {
+  from {
+    transform: rotateY(90deg)
+  }
+  to {
+    transform: rotateY(0deg)
+  }
+}
+@keyframes flip {
+  from {
+    transform: rotateY(90deg)
+  }
+  to {
+    transform: rotateY(0deg)
+  }
+}

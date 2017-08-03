@@ -103,7 +103,7 @@ function printUserInfo() {
 	</div>
 	
 	<div class="row">
-	  <button>Start Quiz</button>
+	  <button class = "btn btn-primary btn-lg center-block" type="submit">Start Quiz</button>
 	
 	</div>
 

@@ -21,13 +21,13 @@ function getRandomKanji() {
 		else {
 			echo "Please try again.<br>";
 		}
-	}
+	}//Test
 }
 
 function getKanji($id) {
 	$sql = "SELECT * FROM `kanji` WHERE (`kanji_id`=" . db_quote($id) . ") LIMIT 1";
 	$result = db_select($sql);
-
+//
 	// Checks for mysqli error
 	if($result === false) {
 		$error = db_error();
@@ -98,46 +98,45 @@ function getKanji($id) {
     </nav>
 </header>
 
-<main>
-
-<div class="container" style="height: 90%">
-	<div class="row">
-		<div class="jumbotron col-sm-8 col-lg-10 col-lg-offset-1 col-sm-offset-2">
-            <h1>Kanji 2000!</h1>
-            <p>Welcome to Quiz</p>
-		</div>
-	</div>
-</div>
-  
+<main>  
 <div class="container" style="height: 90%">
 <div class="row">   
 	<div class="jumbotron col-8 col-sm-offset-0 col-lg-4 col-lg-offset-4">
 		<div class="container" align="center">
-			<div class="kanji" align="center">
+			<div class="el_kanji" id="el_kanji" align="center">
+			
+			<h1 id="kanji">
 			<?php 
 				$kanji = getRandomKanji();
 				echo $kanji[0];
-				$english = $kanji[1];
-				echo $english;
 			?>
+			</h1>
+			
+			<h1 id="english">	
+				<?php 
+				$english = $kanji[1];
+			 	echo $english;
+				?>
+			</h1>
 			</div>
- 			<br><br>
- 		</div>
 
+ 			<br><br>
+ 		 </div>
+  
 		<div class="row" align="center">
 			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-				<button id="A" type="button" class="btn btn-lg btn-default customButton">Cat</button>
+				<button id="A" type="button" class="btn btn-lg btn-default customButton" value=""></button>
 			</div>
 			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-				<button id="B" type="button" class="btn btn-lg btn-default customButton">Dog</button>
+				<button id="B" type="button" class="btn btn-lg btn-default customButton" value=""></button>
 			</div>
 			<br><br><br><br>
 
 			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-				<button id="C" type="button" class="btn btn-lg btn-default customButton">Jones</button>
+				<button id="C" type="button" class="btn btn-lg btn-default customButton" value=""></button>
 			</div>
 			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-				<button id="D" type="button" class="btn btn-lg btn-default customButton">Ball</button>
+				<button id="D" type="button" class="btn btn-lg btn-default customButton" value=""></button>
 			</div>
 			<br><br><br><br>
 
