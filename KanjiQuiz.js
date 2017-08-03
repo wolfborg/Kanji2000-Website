@@ -20,7 +20,7 @@ var onQuestion = 0;
 //onQuestion = localStorage.getItem("onQuestion");
 //localStorage.setItem("onQuestion", onQuestion);
 //alert(localStorage.getItem("onQuestion"));
-alert(document.getElementById("kanji").text);
+alert(document.getElementById("kanji").innerHTML);
 var questionLabel = document.getElementById("numberQuestion");
 	
 var percent = (100/numberQuestions);
