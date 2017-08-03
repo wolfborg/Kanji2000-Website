@@ -23,8 +23,6 @@ var questionLabel = document.getElementById("numberQuestion");
 	
 var percent = (100/numberQuestions);
 bar.style.width = percent + "%";
-		$("#el_kanji").load(location.href + " #el_kanji");
-
 setOptions();
 
 A.addEventListener("click",function(e){
