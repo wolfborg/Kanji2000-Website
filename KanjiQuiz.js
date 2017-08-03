@@ -27,7 +27,7 @@ var questionLabel = document.getElementById("numberQuestion");
 	
 var percent = (100/numberQuestions);
 bar.style.width = percent + "%";
-
+setOptions();
 
 A.addEventListener("click",function(e){
 	if(isCorrect("A")){
@@ -87,7 +87,7 @@ D.addEventListener("click",function(e){
 );
 	
 function setOptions(answer){
-	alert(Math.floor((Math.random() * 4) + 1));
+	//alert(Math.floor((Math.random() * 4) + 1));
 	switch(Math.floor((Math.random() * 4) + 1)){
 		case 1:
 			
