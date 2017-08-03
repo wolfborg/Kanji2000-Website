@@ -138,17 +138,12 @@ function nextQuestion(e){
 	D.removeAttribute("disabled");
 	}
 
-	reload();
+	location.reload();
 
 
 
 }
-	
-   function reload(){
-            var container = document.getElementById("el_kanji");
-            var content = container.innerHTML;
-            container.innerHTML= content;
-        }
+
 	
 function quizOver(){
 	percent = (100/numberQuestions);
