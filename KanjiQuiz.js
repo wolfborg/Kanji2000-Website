@@ -87,7 +87,6 @@ D.addEventListener("click",function(e){
 );
 	
 function isCorrect(answer){
-	location.reload();
 	return answer == currentAnswer;
 }
 	
@@ -110,6 +109,7 @@ function nextQuestion(e){
 	C.removeAttribute("disabled");
 	D.removeAttribute("disabled");
 	}
+	location.reload();
 
 
 }
