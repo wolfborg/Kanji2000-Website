@@ -13,7 +13,7 @@ bar = document.getElementById("bar")
 var kanji = document.getElementById("kanji").innerHTML;
 var answer = document.getElementById("english").innerHTML;
 
-
+alert("load");
 var currentAnswer;
 var wrongAnswer = 0;
 
@@ -131,8 +131,6 @@ function randomAnswer(){
 }
 	
 function isCorrect(answer){
-		$("#el_kanji").load(location.href + " #el_kanji");
-
 	return answer == currentAnswer;
 }
 	
@@ -160,6 +158,7 @@ function nextQuestion(e){
 	
 
 	
+	$("#el_kanji").load(location.href + " #el_kanji");
 	kanji =  document.getElementById("kanji").innerHTML;
 	answer = document.getElementById("english").innerHTML;
 
