@@ -87,6 +87,8 @@ D.addEventListener("click",function(e){
 );
 	
 function setOptions(answer){
+	 kanji = document.getElementById("kanji").innerHTML;
+     answer = document.getElementById("english").innerHTML;
 	switch(Math.floor((Math.random() * 4) + 1)){
 		case 1:
 			A.innerHTML = answer + "";
@@ -140,6 +142,7 @@ function nextQuestion(e){
 	
 	$("#el_kanji").load(location.href + " #el_kanji");
 	setOptions();
+	
 	//location.reload();
 
 
