@@ -23,7 +23,7 @@ var questionLabel = document.getElementById("numberQuestion");
 	
 var percent = (100/numberQuestions);
 bar.style.width = percent + "%";
-setOptions(answer,kanji);
+setOptions();
 
 A.addEventListener("click",function(e){
 	if(isCorrect("A")){
@@ -82,12 +82,12 @@ D.addEventListener("click",function(e){
 }
 );
 	
-function setOptions(answer,kan){
+function setOptions(){
 	 this.kanji = document.getElementById("kanji").innerHTML;
      this.answer = document.getElementById("english").innerHTML;
 	alert("setting options");
-	document.getElementById("kanji").innerHTML = kan;
-	 document.getElementById("english").innerHTML = answer;
+	//document.getElementById("kanji").innerHTML = kan;
+	 //document.getElementById("english").innerHTML = answer;
 
 
 	switch(Math.floor((Math.random() * 4) + 1)){
@@ -163,7 +163,7 @@ function nextQuestion(e){
 	kanji = document.getElementById("kanji").innerHTML;
 
 	
-	setOptions(answer,kanji);
+	setOptions();
 	document.getElementById("kanji").innerHTML = kanji;
 	document.getElementById("english").innerHTML = answer;
 	
