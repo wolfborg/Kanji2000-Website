@@ -129,8 +129,10 @@ function isCorrect(answer){
 function nextQuestion(e){
 	
 	$("#el_kanji").load(location.href + " #el_kanji");
+	kanji =  document.getElementById("kanji").innerHTML;
 	answer = document.getElementById("english").innerHTML;
 
+	setOptions(answer);
 	setOptions(answer);
 
 
