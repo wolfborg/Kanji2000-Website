@@ -87,8 +87,8 @@ D.addEventListener("click",function(e){
 );
 	
 function setOptions(answer){
-	 kanji = document.getElementById("kanji").innerHTML;
-     answer = document.getElementById("english").innerHTML;
+	kanji = document.getElementById("kanji").innerHTML;
+    answer = document.getElementById("english").innerHTML;
 	switch(Math.floor((Math.random() * 4) + 1)){
 		case 1:
 			A.innerHTML = answer + "";
@@ -128,7 +128,6 @@ function setOptions(answer){
 function randomAnswer(){
 	return Math.floor((Math.random() * 4) + 1);
 }
-
 	
 function isCorrect(answer){
 	return answer == currentAnswer;
@@ -137,7 +136,10 @@ function isCorrect(answer){
 function nextQuestion(e){
 	$("#el_kanji").load(location.href + " #el_kanji");
 	answer = document.getElementById("english").innerHTML;
+	$("#el_kanji").load(location.href + " #el_kanji");
+
 	setOptions(answer);
+	
 	wrongAnswer = 0;
 	onQuestion++
 	questionLabel.innerHTML = "<h3>" + (1+onQuestion) + "</h3>";
