@@ -90,8 +90,8 @@ function setOptions(answer){
 	alert(Math.floor((Math.random() * 4) + 1));
 	switch(Math.floor((Math.random() * 4) + 1)){
 		case 1:
-			
 			A.value = answer;
+			A.innerHTML = answer;
 			break;
 		case 2:
 			B.value = answer;
