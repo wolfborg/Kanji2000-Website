@@ -2,202 +2,159 @@ window.onload = start();
 
 function start(){
 	
-var A,B,C,D,nextButton,backButton,bar;
+	var nextButton,backButton;
 
-A = document.getElementById('A');
-B = document.getElementById("B");
-C = document.getElementById("C");
-D = document.getElementById("D");
-bar = document.getElementById("bar")
+	var A = document.getElementById('A');
+	var B = document.getElementById("B");
+	var C = document.getElementById("C");
+	var D = document.getElementById("D");
+	var bar = document.getElementById("bar");
 
+	var borderInitial = A.style.borderColor;
+	var backgroundInitial = A.style.backgroundColor;
 
-var kanji = document.getElementById("kanji").innerHTML;
-var answer = document.getElementById("english").innerHTML;
-var currentAnswer;
-var wrongAnswer = 0;
+	var kanji = document.getElementById("kanji").innerText;
+	var answer = document.getElementById("english").innerText;
 
-var numberQuestions = 10;
-var onQuestion = 1;
+	var currentAnswer;
+	var wrongAnswer = 0;
 
-var questionLabel = document.getElementById("numberQuestion");
-	
-var percent = (100/numberQuestions);
-bar.style.width = percent + "%";
+	var numberQuestions = 10;
+	var onQuestion = 1;
 
-A.addEventListener("click",function(e){
-	if(isCorrect("A")){
-		nextQuestion();
-	}else{
-		this.setAttribute("disabled","disbaled");
-		wrongAnswer++;
-		if(wrongAnswer==3){
-			nextQuestion();
-		}
-	}
-}
-);
-	
-B.addEventListener("click",function(e){
-	if(isCorrect("B")){
-		nextQuestion();
-	}else{
-		this.setAttribute("disabled","disbaled");
-		wrongAnswer++;
-			if(wrongAnswer==3){
-			nextQuestion(this);
-		}
-	}
-
-}
-);
-	
-C.addEventListener("click",function(e){
-	if(isCorrect("C")){
-		nextQuestion();
-	}else{
-		this.setAttribute("disabled","disbaled");
-		wrongAnswer++;
-			if(wrongAnswer==3){
-			nextQuestion();
-		}
+	var questionLabel = document.getElementById("numberQuestion");
 		
-	}
-
-}
-);
-	
-D.addEventListener("click",function(e){
-	if(isCorrect("D")){
-		nextQuestion();
-	}else{
-		this.setAttribute("disabled","disbaled");
-		wrongAnswer++;
-			if(wrongAnswer==3){
-			nextQuestion();
-		}
-	}
-	
-
-}
-);
-
-setOptions();
-
-	
-function setOptions(){
-	 this.kanji = document.getElementById("kanji").innerHTML;
-     this.answer = document.getElementById("english").innerHTML;
-	alert("setting options:" + "Answer:" + answer + " Kanji:" + kanji);
-	//document.getElementById("kanji").innerHTML = kan;
-	 //document.getElementById("english").innerHTML = answer;
-
-
-	switch(Math.floor((Math.random() * 4) + 1)){
-		case 1:
-			A.innerHTML = answer + "";
-			currentAnswer = "A";
-			B.innerHTML = randomAnswer();
-			C.innerHTML = randomAnswer();
-			D.innerHTML = randomAnswer();
-			break;
-		case 2:
-			B.innerHTML = answer + "";
-			currentAnswer = "B";
-			A.innerHTML = randomAnswer();
-			C.innerHTML = randomAnswer();
-			D.innerHTML = randomAnswer();
-			break;	
-		case 3:
-			C.innerHTML = answer + "";
-			currentAnswer = "C";
-			B.innerHTML = randomAnswer();
-			D.innerHTML = randomAnswer();
-			A.innerHTML = randomAnswer();
-			break;	
-		case 4:
-			D.innerHTML = answer + "";
-			currentAnswer = "D";
-			B.innerHTML = randomAnswer();
-			C.innerHTML = randomAnswer();
-			A.innerHTML = randomAnswer();
-			break;
-			
-	}
-	alert(answer + ":" + currentAnswer);
-	
-}
-	
-function randomAnswer(){
-	return Math.floor((Math.random() * 4) + 1);
-}
-	
-function isCorrect(answer){
-	return answer == currentAnswer;
-}
-	
-function nextQuestion(e){
-	
-	
-	wrongAnswer = 0;
-	onQuestion++
-	questionLabel.innerHTML = "<h3>" + (1+onQuestion) + "</h3>";
-
-	percent=percent+(100/numberQuestions);
+	var percent = (100/numberQuestions);
 	bar.style.width = percent + "%";
-	
-	if(onQuestion==numberQuestions){
-		onQuestion = 0;
-		quizOver();
-	}else{
-		
 
-	A.removeAttribute("disabled");
-	B.removeAttribute("disabled");
-	C.removeAttribute("disabled");
-	D.removeAttribute("disabled");
-	}
-	
-	
-	$("#el_kanji").load(location.href + " #el_kanji");
+	A.addEventListener("click",function(e){ correctCheck(this, "A"); });
+	B.addEventListener("click",function(e){ correctCheck(this, "B"); });
+	C.addEventListener("click",function(e){ correctCheck(this, "C"); });
+	D.addEventListener("click",function(e){ correctCheck(this, "D"); });
 
-	answer = document.getElementById("english").innerHTML;
-
-	kanji = document.getElementById("kanji").innerHTML;
-
-	
 	setOptions();
-	document.getElementById("kanji").innerHTML = kanji;
-	document.getElementById("english").innerHTML = answer;
-	
 
-
-	//location.reload();
-
-
-
-}
-	
-
-
-	
-function quizOver(){
-	percent = (100/numberQuestions);
-	bar.style.width = percent + "%";
-	questionLabel.innerHTML = "<h3>" + (1+onQuestion) + "</h3>";
-	alert("Quiz Over");
-}
-
-function lastQuestion(){
-	
-	if(onQuestion==numberQuestions){
-		onQuestion = 0;
-		quizOver();
+	function correctCheck(button, choice) {
+		if(isCorrect(choice)){
+			nextQuestion();
+		}else{
+			button.setAttribute("disabled","disbaled");
+			button.style.borderColor = "red";
+			button.style.backgroundColor = "pink";
+			wrongAnswer++;
+			if(wrongAnswer==3){
+				//nextQuestion();
+			}
+			return false;
+		}
 	}
-	
-}
-	
 
-	
+	function setOptions(){
+		kanji = document.getElementById("kanji").innerText;
+	    answer = document.getElementById("english").innerText;
+	    //console.log(answer);
+		//alert("setting options:" + "Answer:" + answer + " Kanji:" + kanji);
+		//document.getElementById("kanji").innerHTML = kan;
+		//document.getElementById("english").innerHTML = answer;
+
+		A.innerText = randomAnswer();
+		B.innerText = randomAnswer();
+		C.innerText = randomAnswer();
+		D.innerText = randomAnswer();
+
+		switch(Math.floor((Math.random() * 4) + 1)){
+			case 1:
+				A.innerText = answer;
+				currentAnswer = "A";
+				break;
+			case 2:
+				B.innerText = answer;
+				currentAnswer = "B";
+				break;	
+			case 3:
+				C.innerText = answer;
+				currentAnswer = "C";
+				break;	
+			case 4:
+				D.innerText = answer;
+				currentAnswer = "D";
+				break;
+				
+		}
+		//alert(answer + ":" + currentAnswer);
+		
+	}
+		
+	function randomAnswer(){
+		return Math.floor((Math.random() * 4) + 1);
+	}
+		
+	function isCorrect(choice){
+		return choice == currentAnswer;
+	}
+		
+	function nextQuestion(e){
+		A.removeAttribute("disabled");
+		B.removeAttribute("disabled");
+		C.removeAttribute("disabled");
+		D.removeAttribute("disabled");
+
+		A.style.borderColor = borderInitial;
+		B.style.borderColor = borderInitial;
+		C.style.borderColor = borderInitial;
+		D.style.borderColor = borderInitial;
+
+		A.style.backgroundColor = backgroundInitial;
+		B.style.backgroundColor = backgroundInitial;
+		C.style.backgroundColor = backgroundInitial;
+		D.style.backgroundColor = backgroundInitial;
+
+
+		onQuestion++;
+		wrongAnswer = 0;
+
+		questionLabel.innerHTML = "<h3>" + (onQuestion) + "</h3>";
+
+		percent=percent+(100/numberQuestions);
+		bar.style.width = percent + "%";
+		
+		if(onQuestion==numberQuestions){
+			onQuestion = 0;
+			quizOver();
+		}
+		
+		// Loads the new kanji and answer
+		$("#el_kanji").load(location.href + " #el_kanji", function(){
+			// Moved everything after into here because kanji and answer
+			// 	aren't updated on the doc until after loading, meaning
+			//	visually it updates but the variables don't yet
+			kanji = document.getElementById("kanji").innerText;
+			answer = document.getElementById("english").innerText;
+			//console.log(answer);
+			setOptions();
+			document.getElementById("kanji").innerText = kanji;
+			document.getElementById("english").innerText = answer;
+		});
+	}
+		
+
+
+		
+	function quizOver(){
+		percent = (100/numberQuestions);
+		bar.style.width = percent + "%";
+		questionLabel.innerHTML = "<h3>" + (1+onQuestion) + "</h3>";
+		//alert("Quiz Over");
+	}
+
+	function lastQuestion(){
+		
+		if(onQuestion==numberQuestions){
+			onQuestion = 0;
+			quizOver();
+		}
+		
+	}
 }
 
 	
