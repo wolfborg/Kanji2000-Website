@@ -63,7 +63,7 @@
       <div class="row">
         <div class="jumbotron col-sm-8 col-sm-offset-0">
           <h1>Welcome to Kanji 2000</h1>
-          <p>A place for people learning Japanese to learn and review the 2000 essential kanji characters for reading and writing.</p>
+          <p>A place for people studying Japanese to learn and review the 2000 essential kanji characters for reading and writing.</p>
         </div>
         <img class="col-sm-3 img-responsive img-center" src="img/water.jpg">
       </div>
