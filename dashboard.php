@@ -76,7 +76,7 @@ function printUserInfo() {
                
             <span class="glyphicon glyphicon-user"> Account</span></a>
                 <ul class="dropdown-menu">
-                  <li><a href="/logout.php">Logout</a></li>
+                  <li><a href="logout.php">Logout</a></li>
                   <li><a href="#" data-toggle="modal" data-target="#settingsModal">Settings</a></li>
                 </ul>
               </li>
