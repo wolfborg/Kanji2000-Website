@@ -157,7 +157,7 @@ function getKanjiIdByEng($kanji_eng) {
    	<div class="container-fluid">
          	<div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#topFixedNavbar1" aria-expanded="false"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
-            <a class="navbar-brand" href="#">Kanji-2000</a></div>
+            <a class="navbar-brand" href="index.php">Kanji 2000</a></div>
       <div class="collapse navbar-collapse" id="topFixedNavbar1">
             
             <form class="navbar-form navbar-left" role="search">
@@ -169,8 +169,8 @@ function getKanjiIdByEng($kanji_eng) {
                
             <span class="glyphicon glyphicon-user"> Account</span></a>
                 <ul class="dropdown-menu">
-                  <li><a href="/logout.php">Logout</a></li>
-                  <li><a href="#">Settings</a></li>
+                  <li><a href="logout.php">Logout</a></li>
+                  <li><a href="#" data-toggle="modal" data-target="#settingsModal">Settings</a></li>
                 </ul>
               </li>
             </ul>
@@ -245,6 +245,44 @@ function getKanjiIdByEng($kanji_eng) {
         <p class="text-muted">Wentworth Institute of Technology</p>
       </div>
 </footer>
+
+<div id="settingsModal" class="modal fade" role="dialog">
+  <div id="settingsModal" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" id="settings-close" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Settings</h4>
+        </div>
+        <div class="modal-body">
+          <form method="post" action="settings.php" id="settings-form">
+            <fieldset>
+              <h4>Change Password</h4>
+              <label>Enter Password:</label> <input type="password" name="password" size="25" class="required"/><br/>
+              <label>Confirm Password:</label> <input type="password" name="confirmPassword" size="25" class="required"/>
+				<br><br>
+              <h4>Change Your Skill Level:</h4>
+
+                <input type="radio" name="skill" value="beginner" class="required"/> Beginner
+                <input type="radio" name="skill" value="intermediate" class="required"/> Intermediate
+                <input type="radio" name="skill" value="expert" class="required"/> Expert<br/><br/>
+                <div class="rectangle centered"> 
+
+                <div>
+                <input name="settings" type=submit class="btn btn-default" value="Save Changes"/>
+               </div>
+              </div>
+            </fieldset>
+          </form>
+          </br>
+          <form method="post" action="reset_progress.php" id="reset-form">
+              <input type="submit" name="reset" class="btn btn-danger" value="Reset Progress"/>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
    
 <script src="KanjiQuiz.js"></script>   
 </body>

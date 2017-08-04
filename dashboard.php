@@ -67,7 +67,7 @@ function printUserInfo() {
   <nav class="navbar navbar-default">
    	<div class="container-fluid">
          	<div class="navbar-header">
-            <a class="navbar-brand" href="#">Kanji-2000</a></div>
+            <a class="navbar-brand" href="index.php">Kanji 2000</a></div>
       <div class="collapse navbar-collapse" id="topFixedNavbar1">
           
            
@@ -126,7 +126,7 @@ function printUserInfo() {
 </footer>
   
 <div id="settingsModal" class="modal fade" role="dialog">
-   <div id="settingsModal" role="dialog">
+  <div id="settingsModal" role="dialog">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -161,6 +161,7 @@ function printUserInfo() {
       </div>
     </div>
   </div>
+</div>
    
 </body>
 </html>
