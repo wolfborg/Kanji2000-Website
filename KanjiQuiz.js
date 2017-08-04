@@ -38,11 +38,15 @@ function start(){
 
 	setOptions();
 
-
-
 	function correctCheck(button, choice) {
 		if(isCorrect(choice)){
-			nextQuestion();
+			button.style.borderColor = "green";
+			button.style.backgroundColor = "lime";
+			A.setAttribute("disabled","disbaled");
+			B.setAttribute("disabled","disbaled");
+			C.setAttribute("disabled","disbaled");
+			D.setAttribute("disabled","disbaled");
+			setTimeout(function(){ nextQuestion(); },1000);
 		}else{
 			button.setAttribute("disabled","disbaled");
 			button.style.borderColor = "red";
