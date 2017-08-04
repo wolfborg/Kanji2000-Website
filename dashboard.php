@@ -147,12 +147,13 @@ function printUserInfo() {
                 <input type="radio" name="skill" value="expert" class="required"/> Expert<br/><br/>
                 <div class="rectangle centered"> 
 
-                <div class="col-sm-2 col-sm-offset-2 col-xs-2 col-xs-offset-1">
+                <div>
                 <input name="settings" type=submit class="btn btn-default" value="Save Changes"/>
                </div>
               </div>
             </fieldset>
           </form>
+          </br>
           <form method="post" action="reset_progress.php" id="reset-form">
               <input type="submit" name="reset" class="btn btn-danger" value="Reset Progress"/>
           </form>
