@@ -103,8 +103,9 @@ function printUserInfo() {
 	</div>
 	
 	<div class="row">
-	  <button class = "btn btn-primary btn-lg center-block" type="submit">Start Quiz</button>
-	
+    <a href="/quiz.php">
+	  <button class = "btn btn-primary btn-lg center-block" type="submit">Start Quiz</button></a>
+
 	</div>
 
 </div>
