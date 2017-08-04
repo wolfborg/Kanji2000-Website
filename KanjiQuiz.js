@@ -27,7 +27,9 @@ function start(){
 	var percent = (100/numberQuestions);
 	bar.style.width = percent + "%";
 
+	var answerButtons;
 	var answers = [];
+	var lastAnswer;
 
 	A.addEventListener("click",function(e){ correctCheck(this, "A"); });
 	B.addEventListener("click",function(e){ correctCheck(this, "B"); });
@@ -35,6 +37,8 @@ function start(){
 	D.addEventListener("click",function(e){ correctCheck(this, "D"); });
 
 	setOptions();
+
+
 
 	function correctCheck(button, choice) {
 		if(isCorrect(choice)){
@@ -54,15 +58,6 @@ function start(){
 	function setOptions(){
 		kanji = document.getElementById("kanji").innerText;
 	    answer = document.getElementById("english").innerText;
-	    //console.log(answer);
-		//alert("setting options:" + "Answer:" + answer + " Kanji:" + kanji);
-		//document.getElementById("kanji").innerHTML = kan;
-		//document.getElementById("english").innerHTML = answer;
-
-		//A.innerText = 1;
-		//B.innerText = 2;
-		//C.innerText = 3;
-		//D.innerText = 4;
 
 		switch(randomAnswer()){
 			case 1:
@@ -132,7 +127,15 @@ function start(){
 			//	visually it updates but the variables don't yet
 			kanji = document.getElementById("kanji").innerText;
 			answer = document.getElementById("english").innerText;
-			setOptions();
+
+			$("#answers").load(location.href + " #answers", function() {
+				A = document.getElementById('A');
+				B = document.getElementById("B");
+				C = document.getElementById("C");
+				D = document.getElementById("D");
+
+				setOptions();
+			});
 		});
 	}
 		

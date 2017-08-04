@@ -29,6 +29,19 @@ function getRandomAnswer() {
 	return $kanji[1];
 }
 
+function getRandomAnswers() {
+	$answers = array();
+
+	while(count($answers) < 4) {
+		$rand = getRandomAnswer();
+		if (!in_array($rand, $answers)) {
+			$answers[] = $rand;
+		}
+	}
+
+	return $answers;
+}
+
 function getKanji($id) {
 	$sql = "SELECT * FROM `kanji` WHERE (`kanji_id`=" . db_quote($id) . ") LIMIT 1";
 	$result = db_select($sql);
@@ -117,24 +130,21 @@ function getKanji($id) {
  			<br><br>
  		 </div>
   
-		<div class="row" align="center">
+		<div id="answers" class="row" align="center">
+			<?php $rands = getRandomAnswers(); ?>
 			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-				<?php $rand = getRandomAnswer(); ?>
-				<?php echo '<button id="A" type="button" class="btn btn-lg btn-default customButton" value="' . $rand . '">' . $rand . '</button>' ?>
+				<?php echo '<button id="A" type="button" class="btn btn-lg btn-default customButton" value="' . $rands[0] . '">' . $rands[0] . '</button>' ?>
 			</div>
 			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-				<?php $rand = getRandomAnswer(); ?>
-				<?php echo '<button id="B" type="button" class="btn btn-lg btn-default customButton" value="' . $rand . '">' . $rand . '</button>' ?>
+				<?php echo '<button id="B" type="button" class="btn btn-lg btn-default customButton" value="' . $rands[1] . '">' . $rands[1] . '</button>' ?>
 			</div>
 			<br><br><br><br>
 
 			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-				<?php $rand = getRandomAnswer(); ?>
-				<?php echo '<button id="C" type="button" class="btn btn-lg btn-default customButton" value="' . $rand . '">' . $rand . '</button>' ?>
+				<?php echo '<button id="C" type="button" class="btn btn-lg btn-default customButton" value="' . $rands[2] . '">' . $rands[2] . '</button>' ?>
 			</div>
 			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-				<?php $rand = getRandomAnswer(); ?>
-				<?php echo '<button id="D" type="button" class="btn btn-lg btn-default customButton" value="' . $rand . '">' . $rand . '</button>' ?>
+				<?php echo '<button id="D" type="button" class="btn btn-lg btn-default customButton" value="' . $rands[3] . '">' . $rands[3] . '</button>' ?>
 			</div>
 			<br><br><br><br>
 
