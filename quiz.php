@@ -166,8 +166,6 @@ function kanjiTotal() {
 
 <link rel="stylesheet" href="css/bootstrap.min.css" media="screen">
 <link rel="stylesheet" href="css/style.css" media="screen">
-
-
 <script src="https://code.jquery.com/jquery.js"></script>
 <script src="js/bootstrap.min.js"></script>
 
@@ -314,6 +312,7 @@ function kanjiTotal() {
   </div>
 </div>
    
-<script src="KanjiQuiz.js"></script>   
+<script src="KanjiQuiz.js"></script>
+<script type="text/javascript" src="settings_validation.js"></script> 
 </body>
 </html>

@@ -19,7 +19,7 @@ function start(){
 	var currentAnswer;
 	var wrongAnswer = 0;
 
-	var numberQuestions = 10;
+	var numberQuestions = 35;
 	var onQuestion = 1;
 
 	var questionLabel = document.getElementById("numberQuestion");

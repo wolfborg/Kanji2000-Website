@@ -139,7 +139,7 @@ function printUserInfo() {
               <h4>Change Password</h4>
               <label>Enter Password:</label> <input type="password" name="password" size="25" class="required"/><br/>
               <label>Confirm Password:</label> <input type="password" name="confirmPassword" size="25" class="required"/>
-				<br><br>
+				      <br><br>
               <h4>Change Your Skill Level:</h4>
 
                 <input type="radio" name="skill" value="beginner" class="required"/> Beginner
