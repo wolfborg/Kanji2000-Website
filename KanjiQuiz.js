@@ -50,7 +50,7 @@ function start(){
 			B.setAttribute("disabled","disbaled");
 			C.setAttribute("disabled","disbaled");
 			D.setAttribute("disabled","disbaled");
-			setTimeout(function(){ nextQuestion(); },1000);
+			setTimeout(function(){ nextQuestion(); },750);
 		}else{
 			button.setAttribute("disabled","disbaled");
 			button.style.borderColor = "red";
@@ -66,7 +66,7 @@ function start(){
 				B.setAttribute("disabled","disbaled");
 				C.setAttribute("disabled","disbaled");
 				D.setAttribute("disabled","disbaled");
-				setTimeout(function(){ nextQuestion(); },1000);
+				setTimeout(function(){ nextQuestion(); },750);
 			}
 			return false;
 		}

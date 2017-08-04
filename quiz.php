@@ -63,6 +63,10 @@ function getNewUserKanji() {
 			return $kanji;
 		}
 
+		if (kanjiTotal() - getUserProgress() == 1) {
+			return $kanji;
+		}
+		
 		return getNewUserKanji();
 	}
 }
@@ -124,6 +128,32 @@ function getKanjiIdByEng($kanji_eng) {
 		else {
 			echo "Kanji ID not found. Please try again.<br>";
 		}
+	}
+}
+
+function getUserProgress() {
+	$sql = "SELECT `user_progress` FROM `users` WHERE (`user_id` = " . db_quote($_SESSION['user_id']) . ") LIMIT 1";
+	$result = db_select($sql);
+
+	if($result === false) {
+		$error = db_error();
+		echo $error;
+	}
+	else {
+		return $result[0]['user_progress'];
+	}
+}
+
+function kanjiTotal() {
+	$sql = "SELECT COUNT(*) FROM `kanji` LIMIT 1";
+	$result = db_select($sql);
+	
+	// Checks for mysqli error
+	if($result === false) {
+		$error = db_error();
+		echo $error;
+	} else {
+		return $result[0]['COUNT(*)'];
 	}
 }
 

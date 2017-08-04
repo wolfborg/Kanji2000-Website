@@ -52,7 +52,7 @@ function kanji_progress_up($kanji_id) {
 		} else {
 			// add one to existing progress
 			// can be used later to check for 3 progress on a kanji
-			$sql = "UPDATE `users_kanji_progress` SET `progress`= `progress` + 1 WHERE `user_id`=" . db_quote($user_id) . " AND `kanji_id`=" . db_quote($kanji_id);
+			$sql = "UPDATE `user_kanji_progress` SET `progress`= `progress` + 1 WHERE `user_id`=" . db_quote($user_id) . " AND `kanji_id`=" . db_quote($kanji_id);
 			$result = db_query($sql);
 			if($result === false) {
 				$error = db_error();
@@ -62,7 +62,20 @@ function kanji_progress_up($kanji_id) {
 	}
 }
 
-function reset_progress(){
+function getUserProgress() {
+	$sql = "SELECT `user_progress` FROM `users` WHERE (`user_id` = " . db_quote($_SESSION['user_id']) . ") LIMIT 1";
+	$result = db_select($sql);
+
+	if($result === false) {
+		$error = db_error();
+		echo $error;
+	}
+	else {
+		return $result[0]['user_progress'];
+	}
+}
+
+function reset_progress() {
 	$user_id = $_SESSION["user_id"];
 
 	$sql = "DELETE FROM `user_kanji_progress` WHERE (`user_id`=" . db_quote($user_id) . ")";
