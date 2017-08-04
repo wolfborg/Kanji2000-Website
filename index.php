@@ -62,16 +62,16 @@
     <div class="container">
       <div class="row">
         <div class="jumbotron col-sm-8 col-sm-offset-0">
-          <h1>Kanji 2000!</h1>
-          <p>Welcome to Kanji 2000! The aim of this website it to offer a place for people just beginning to learn japanese to start learning the essential 2000 kanji characters, or allow for more experienced students to brush up on the basics.</p>
+          <h1>Welcome to Kanji 2000</h1>
+          <p>A place for people learning Japanese to learn and review the 2000 essential kanji characters for reading and writing.</p>
         </div>
-        <img class="col-sm-4 img-responsive img-center" src="Kanji.gif">
+        <img class="col-sm-3 img-responsive img-center" src="img/water.jpg">
       </div>
     </div>
-    <img class="col-xs-4 img-responsive hidden-sm" src="Kanji.gif">
     
     <div class="container">
       <div class="row">
+        <img class="col-xs-3 img-responsive hidden-sm" src="Kanji.gif">
         <div class="jumbotron col-sm-8 col-sm-offset-0">
           <h1>Learn Quick!</h1>
           <p>Take our quiz and track your progress as you begin to learn Kanji.</p>
@@ -139,7 +139,7 @@
 
   <footer class="footer">
     <div class="container">
-      <p class="text-muted">Wentworth Institute of Technology</p>
+      <center><p class="text-muted">Wentworth Institute of Technology</p><center>
     </div>
   </footer>
 </body>
