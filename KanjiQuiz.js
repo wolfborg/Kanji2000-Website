@@ -115,36 +115,47 @@ function start(){
 		percent=percent+(100/numberQuestions);
 		bar.style.width = percent + "%";
 		
-		if(onQuestion==numberQuestions){
+		if(onQuestion==numberQuestions+1){
 			onQuestion = 0;
 			quizOver();
 		}
 		
 		// Loads the new kanji and answer
-		$("#quiz").load(location.href + " #quiz", function(){
-			kanji = document.getElementById("kanji").innerText;
-			answer = document.getElementById("english").innerText;
-			A = document.getElementById("A");
-			B = document.getElementById("B");
-			C = document.getElementById("C");
-			D = document.getElementById("D");
-
-			A.addEventListener("click",function(e){ correctCheck(this, "A"); });
-			B.addEventListener("click",function(e){ correctCheck(this, "B"); });
-			C.addEventListener("click",function(e){ correctCheck(this, "C"); });
-			D.addEventListener("click",function(e){ correctCheck(this, "D"); });
-
-			setOptions();
-		});
+		loadQuiz();
 	}
 		
+	function loadQuiz() {
+		$("#quiz").load(location.href + " #quiz", function(){
+			lastAnswer = answer;
+			answer = document.getElementById("english").innerText;
+			
+			if (lastAnswer != answer) {
+				kanji = document.getElementById("kanji").innerText;
+				A = document.getElementById("A");
+				B = document.getElementById("B");
+				C = document.getElementById("C");
+				D = document.getElementById("D");
 
+				A.addEventListener("click",function(e){ correctCheck(this, "A"); });
+				B.addEventListener("click",function(e){ correctCheck(this, "B"); });
+				C.addEventListener("click",function(e){ correctCheck(this, "C"); });
+				D.addEventListener("click",function(e){ correctCheck(this, "D"); });
+
+				setOptions();
+				return;
+			}
+
+			console.log("dup");
+			loadQuiz();
+		});
+	}
 
 		
 	function quizOver(){
 		percent = (100/numberQuestions);
 		bar.style.width = percent + "%";
-		questionLabel.innerHTML = "<h3>" + (1+onQuestion) + "</h3>";
+		onQuestion++;
+		questionLabel.innerHTML = "<h3>" + (onQuestion) + "</h3>";
 		//alert("Quiz Over");
 	}
 

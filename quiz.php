@@ -132,6 +132,7 @@ function getKanji($id) {
 					?>
 					<h1 id="kanji"><?php echo $kanji[0]; ?></h1>
 					<h1 id="english" style="display:none"><?php echo $kanji[1]; ?></h1>
+					<h1 id="last" style="display:none"></h1>
 				</div>
 
 	 			<br><br>
