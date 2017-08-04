@@ -4,7 +4,7 @@ function start(){
 	
 	var nextButton,backButton;
 
-	var A = document.getElementById('A');
+	var A = document.getElementById("A");
 	var B = document.getElementById("B");
 	var C = document.getElementById("C");
 	var D = document.getElementById("D");
@@ -121,21 +121,20 @@ function start(){
 		}
 		
 		// Loads the new kanji and answer
-		$("#el_kanji").load(location.href + " #el_kanji", function(){
-			// Moved everything after into here because kanji and answer
-			// 	aren't updated on the doc until after loading, meaning
-			//	visually it updates but the variables don't yet
+		$("#quiz").load(location.href + " #quiz", function(){
 			kanji = document.getElementById("kanji").innerText;
 			answer = document.getElementById("english").innerText;
+			A = document.getElementById("A");
+			B = document.getElementById("B");
+			C = document.getElementById("C");
+			D = document.getElementById("D");
 
-			$("#answers").load(location.href + " #answers", function() {
-				A = document.getElementById('A');
-				B = document.getElementById("B");
-				C = document.getElementById("C");
-				D = document.getElementById("D");
+			A.addEventListener("click",function(e){ correctCheck(this, "A"); });
+			B.addEventListener("click",function(e){ correctCheck(this, "B"); });
+			C.addEventListener("click",function(e){ correctCheck(this, "C"); });
+			D.addEventListener("click",function(e){ correctCheck(this, "D"); });
 
-				setOptions();
-			});
+			setOptions();
 		});
 	}
 		

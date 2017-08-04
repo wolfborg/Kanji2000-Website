@@ -120,42 +120,47 @@ function getKanji($id) {
 <div class="container" style="height: 90%">
 <div class="row">   
 	<div class="jumbotron col-8 col-sm-offset-0 col-lg-4 col-lg-offset-4">
-		<div class="container" align="center">
-			<div id="el_kanji" class="el_kanji" align="center">
-				<?php $kanji = getRandomKanji(); ?>
-				<h1 id="kanji"><?php echo $kanji[0];?></h1>
-				<h1 id="english" style="display:none"><?php echo $kanji[1]; ?></h1>
-			</div>
+		<div id="quiz">
+			<div class="container" align="center">
+				<div id="el_kanji" class="el_kanji" align="center">
+					<?php 
+						$rands = getRandomAnswers();
+						$kanji = getRandomKanji();
+						while (in_array($kanji[1], $rands)) {
+							$kanji = getRandomKanji();
+						}
+					?>
+					<h1 id="kanji"><?php echo $kanji[0]; ?></h1>
+					<h1 id="english" style="display:none"><?php echo $kanji[1]; ?></h1>
+				</div>
 
- 			<br><br>
- 		 </div>
-  
-		<div id="answers" class="row" align="center">
-			<?php $rands = getRandomAnswers(); ?>
-			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-				<?php echo '<button id="A" type="button" class="btn btn-lg btn-default customButton" value="' . $rands[0] . '">' . $rands[0] . '</button>' ?>
-			</div>
-			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-				<?php echo '<button id="B" type="button" class="btn btn-lg btn-default customButton" value="' . $rands[1] . '">' . $rands[1] . '</button>' ?>
-			</div>
-			<br><br><br><br>
+	 			<br><br>
+	 		 </div>
+	  
+			<div id="answers" class="row" align="center">
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+					<?php echo '<button id="A" type="button" class="btn btn-lg btn-default customButton" value="' . $rands[0] . '">' . $rands[0] . '</button>' ?>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+					<?php echo '<button id="B" type="button" class="btn btn-lg btn-default customButton" value="' . $rands[1] . '">' . $rands[1] . '</button>' ?>
+				</div>
+				<br><br><br><br>
 
-			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-				<?php echo '<button id="C" type="button" class="btn btn-lg btn-default customButton" value="' . $rands[2] . '">' . $rands[2] . '</button>' ?>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+					<?php echo '<button id="C" type="button" class="btn btn-lg btn-default customButton" value="' . $rands[2] . '">' . $rands[2] . '</button>' ?>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+					<?php echo '<button id="D" type="button" class="btn btn-lg btn-default customButton" value="' . $rands[3] . '">' . $rands[3] . '</button>' ?>
+				</div>
+				<br><br><br><br>
 			</div>
-			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-				<?php echo '<button id="D" type="button" class="btn btn-lg btn-default customButton" value="' . $rands[3] . '">' . $rands[3] . '</button>' ?>
-			</div>
-			<br><br><br><br>
-
-			<div class="col-lg-12">
+		</div>
+		<div class="row" align="center">
+		<div class="col-lg-12">
 				<div class="progress" style="background-color: grey">
 					<div id="bar" class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:0%"></div>
 				</div>             
 			</div> 
-		</div>
-		<div class="row" align="center">
-
 		 
 		 <div class="col-sm-6 col-lg-12 col-sm-offset-3 col-md-offset-3 col-lg-offset-0">
 		 	<h3 id="numberQuestion"> 1 </h3>
