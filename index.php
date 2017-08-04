@@ -32,7 +32,7 @@
             <span class="icon-bar"></span><span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Kanji-2000</a></div>
+          <a class="navbar-brand" href="index.php">Kanji 2000</a></div>
 
           <div class="collapse navbar-collapse" id="topFixedNavbar1"> 
             <form class="navbar-form navbar-left" role="search">
