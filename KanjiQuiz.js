@@ -27,6 +27,8 @@ function start(){
 	var percent = (100/numberQuestions);
 	bar.style.width = percent + "%";
 
+	var answers = [];
+
 	A.addEventListener("click",function(e){ correctCheck(this, "A"); });
 	B.addEventListener("click",function(e){ correctCheck(this, "B"); });
 	C.addEventListener("click",function(e){ correctCheck(this, "C"); });
@@ -57,12 +59,12 @@ function start(){
 		//document.getElementById("kanji").innerHTML = kan;
 		//document.getElementById("english").innerHTML = answer;
 
-		A.innerText = randomAnswer();
-		B.innerText = randomAnswer();
-		C.innerText = randomAnswer();
-		D.innerText = randomAnswer();
+		//A.innerText = 1;
+		//B.innerText = 2;
+		//C.innerText = 3;
+		//D.innerText = 4;
 
-		switch(Math.floor((Math.random() * 4) + 1)){
+		switch(randomAnswer()){
 			case 1:
 				A.innerText = answer;
 				currentAnswer = "A";
@@ -130,10 +132,7 @@ function start(){
 			//	visually it updates but the variables don't yet
 			kanji = document.getElementById("kanji").innerText;
 			answer = document.getElementById("english").innerText;
-			//console.log(answer);
 			setOptions();
-			document.getElementById("kanji").innerText = kanji;
-			document.getElementById("english").innerText = answer;
 		});
 	}
 		

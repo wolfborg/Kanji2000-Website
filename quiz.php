@@ -21,7 +21,12 @@ function getRandomKanji() {
 		else {
 			echo "Please try again.<br>";
 		}
-	}//Test
+	}
+}
+
+function getRandomAnswer() {
+	$kanji = getRandomKanji();
+	return $kanji[1];
 }
 
 function getKanji($id) {
@@ -114,18 +119,22 @@ function getKanji($id) {
   
 		<div class="row" align="center">
 			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-				<button id="A" type="button" class="btn btn-lg btn-default customButton" value=""></button>
+				<?php $rand = getRandomAnswer(); ?>
+				<?php echo '<button id="A" type="button" class="btn btn-lg btn-default customButton" value="' . $rand . '">' . $rand . '</button>' ?>
 			</div>
 			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-				<button id="B" type="button" class="btn btn-lg btn-default customButton" value=""></button>
+				<?php $rand = getRandomAnswer(); ?>
+				<?php echo '<button id="B" type="button" class="btn btn-lg btn-default customButton" value="' . $rand . '">' . $rand . '</button>' ?>
 			</div>
 			<br><br><br><br>
 
 			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-				<button id="C" type="button" class="btn btn-lg btn-default customButton" value=""></button>
+				<?php $rand = getRandomAnswer(); ?>
+				<?php echo '<button id="C" type="button" class="btn btn-lg btn-default customButton" value="' . $rand . '">' . $rand . '</button>' ?>
 			</div>
 			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-				<button id="D" type="button" class="btn btn-lg btn-default customButton" value=""></button>
+				<?php $rand = getRandomAnswer(); ?>
+				<?php echo '<button id="D" type="button" class="btn btn-lg btn-default customButton" value="' . $rand . '">' . $rand . '</button>' ?>
 			</div>
 			<br><br><br><br>
 
