@@ -40,6 +40,10 @@ function start(){
 
 	function correctCheck(button, choice) {
 		if(isCorrect(choice)){
+			if (wrongAnswer == 0) {
+				$.post('progress.php', { kanji_jap : kanji }, function(data){ console.log(data); });
+			}
+
 			button.style.borderColor = "green";
 			button.style.backgroundColor = "lime";
 			A.setAttribute("disabled","disbaled");
@@ -53,7 +57,16 @@ function start(){
 			button.style.backgroundColor = "pink";
 			wrongAnswer++;
 			if(wrongAnswer==3){
-				//nextQuestion();
+				if (A.style.borderColor == borderInitial) { A.style.borderColor = "green"; }
+				if (B.style.borderColor == borderInitial) { B.style.borderColor = "green"; }
+				if (C.style.borderColor == borderInitial) { C.style.borderColor = "green"; }
+				if (D.style.borderColor == borderInitial) { D.style.borderColor = "green"; }
+
+				A.setAttribute("disabled","disbaled");
+				B.setAttribute("disabled","disbaled");
+				C.setAttribute("disabled","disbaled");
+				D.setAttribute("disabled","disbaled");
+				setTimeout(function(){ nextQuestion(); },1000);
 			}
 			return false;
 		}
@@ -149,7 +162,6 @@ function start(){
 				return;
 			}
 
-			console.log("dup");
 			loadQuiz();
 		});
 	}

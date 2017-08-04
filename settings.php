@@ -51,7 +51,7 @@ function change_settings() {
 				}
 			}
 		if(isset($skill)){
-			$sql = "UPDATE `users` SET `user_level` = " . db_quote($skill) ." WHERE  `user_id` = ".db_quote($_SESSION["user_id"]);
+			$sql = "UPDATE `users` SET `user_level` = " . db_quote($skill) ." WHERE  `user_id` = " . db_quote($_SESSION["user_id"]);
 			$result = db_query($sql);
 				
 			// Checks for result

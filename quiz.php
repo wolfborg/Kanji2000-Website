@@ -1,4 +1,5 @@
 <?php
+session_start();
 require 'database.php';
 
 function getRandomKanji() {
@@ -42,10 +43,34 @@ function getRandomAnswers() {
 	return $answers;
 }
 
+function getNewUserKanji() {
+	$user_id = $_SESSION["user_id"];
+
+	$kanji = getRandomKanji();
+
+	$sql = "SELECT * FROM `user_kanji_progress` WHERE (`user_id`=" . db_quote($user_id) . " AND `kanji_id`=" . db_quote(getKanjiIdByJap($kanji[0])) . ") LIMIT 1";
+	$result = db_select($sql);
+	
+	// Checks for mysqli error
+	if($result === false) {
+		$error = db_error();
+		echo $error;
+	}
+	else {
+		// Checks for result
+		if(empty($result)) {
+			//if ($result[0]['progress'] < 3) { )
+			return $kanji;
+		}
+
+		return getNewUserKanji();
+	}
+}
+
 function getKanji($id) {
 	$sql = "SELECT * FROM `kanji` WHERE (`kanji_id`=" . db_quote($id) . ") LIMIT 1";
 	$result = db_select($sql);
-//
+
 	// Checks for mysqli error
 	if($result === false) {
 		$error = db_error();
@@ -60,6 +85,44 @@ function getKanji($id) {
 		}
 		else {
 			echo "Invalid Kanji. Please try again.<br>";
+		}
+	}
+}
+
+function getKanjiIdByJap($kanji_jap) {
+	$sql = "SELECT `kanji_id` FROM `kanji` WHERE (`kanji_jap` = " . db_quote($kanji_jap) . ") LIMIT 1";
+	$result = db_select($sql);
+	
+	// Checks for mysqli error
+	if($result === false) {
+		$error = db_error();
+		echo $error;
+	}
+	else {
+		if (!empty($result)) {
+			return $result[0]['kanji_id'];
+		}
+		else {
+			echo "Kanji ID not found. Please try again.<br>";
+		}
+	}
+}
+
+function getKanjiIdByEng($kanji_eng) {
+	$sql = "SELECT `kanji_id` FROM `kanji` WHERE (`kanji_eng`=" . db_quote($kanji_eng) . ") LIMIT 1";
+	$result = db_select($sql);
+	
+	// Checks for mysqli error
+	if($result === false) {
+		$error = db_error();
+		echo $error;
+	}
+	else {
+		if (!empty($result)) {
+			return $result[0]['kanji_id'];
+		}
+		else {
+			echo "Kanji ID not found. Please try again.<br>";
 		}
 	}
 }
@@ -125,9 +188,11 @@ function getKanji($id) {
 				<div id="el_kanji" class="el_kanji" align="center">
 					<?php 
 						$rands = getRandomAnswers();
-						$kanji = getRandomKanji();
+						//$kanji = getRandomKanji();
+						$kanji = getNewUserKanji();
 						while (in_array($kanji[1], $rands)) {
-							$kanji = getRandomKanji();
+							//$kanji = getRandomKanji();
+							$kanji = getNewUserKanji();
 						}
 					?>
 					<h1 id="kanji"><?php echo $kanji[0]; ?></h1>
@@ -158,10 +223,10 @@ function getKanji($id) {
 		</div>
 		<div class="row" align="center">
 		<div class="col-lg-12">
-				<div class="progress" style="background-color: grey">
-					<div id="bar" class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:0%"></div>
-				</div>             
-			</div> 
+			<div class="progress" style="background-color: grey">
+				<div id="bar" class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:0%"></div>
+			</div>             
+		</div> 
 		 
 		 <div class="col-sm-6 col-lg-12 col-sm-offset-3 col-md-offset-3 col-lg-offset-0">
 		 	<h3 id="numberQuestion"> 1 </h3>
