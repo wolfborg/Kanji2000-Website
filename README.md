@@ -2,6 +2,7 @@
 A Japanese kanji quiz/review website.
 
 Requires PHP5 >= 5.5.0 or PHP7 for the password hashing/verifying.
+
 Older setups probably need to edit register.php, login.php, and the users table in the database.
 
 Installation:
