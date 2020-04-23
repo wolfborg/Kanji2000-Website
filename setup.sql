@@ -92,7 +92,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `user_last_name` varchar(40) DEFAULT NULL,
   `user_level` int(4) NOT NULL DEFAULT '0',
   `user_progress` int(4) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -106,7 +106,7 @@ CREATE TABLE IF NOT EXISTS `user_kanji_progress` (
   `user_id` int(11) NOT NULL,
   `kanji_id` int(11) NOT NULL,
   `progress` int(11) NOT NULL DEFAULT '1'
-) ENGINE=InnoDB AUTO_INCREMENT=87 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=latin1;
 
 --
 -- Indexes for dumped tables
