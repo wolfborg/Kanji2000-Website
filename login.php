@@ -35,35 +35,18 @@ function user_login() {
 			else {
 				// Checks for result
 				if(!empty($result)) {
-					$algorithm = "sha256";
-					$iterations = 10000;
-					$user_salt = $result[0]["user_salt"];
-					$password = $_POST["password"];
-					// Hashes entered password using the username's salt and PBKDF2
-					$password = hash_pbkdf2($algorithm, $password, $user_salt, $iterations);
+					$password = password_verify($_POST["password"], $result[0]['user_hash']);
 
-					// Checks for correct username and password
-					$sql = "SELECT * FROM `users` WHERE (`user_name`=" . db_quote($username) . " AND `user_password`=" . db_quote($password) . ") LIMIT 1";
-					$result = db_select($sql);
-					
-					// Checks for mysqli error
-					if($result === false) {
-						$error = db_error();
-						echo $error;
+					if($password) {
+						echo "Login Successful<br>";
+						// Creates user session
+						$_SESSION['user_id'] = $result[0]['user_id'];
+						$_SESSION['user_name'] = $result[0]['user_name'];
+						$_SESSION['user_email'] = $result[0]['user_email'];
+						header("location: dashboard.php");
 					}
 					else {
-						// Checks for result
-						if(!empty($result)) {
-							echo "Login Successful<br>";
-							// Creates user session
-							$_SESSION['user_id'] = $result[0]['user_id'];
-							$_SESSION['user_name'] = $result[0]['user_name'];
-							$_SESSION['user_email'] = $result[0]['user_email'];
-							header("location: dashboard.php");
-						}
-						else {
-							echo "Invalid username or password. Please try again.<br>";
-						}
+						echo "Invalid username or password. Please try again.<br>";
 					}
 				}
 				else {

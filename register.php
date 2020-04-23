@@ -27,19 +27,14 @@ function user_register() {
 
 		// Checks if password is entered
 		if(isset($_POST["password"]) && !empty($_POST["password"])) {
-			$algorithm = "sha256";
-			// Creates randomized salt for the new user
-			$salt = mcrypt_create_iv(16, MCRYPT_DEV_URANDOM);
-			$iterations = 10000;
-			// Creates PBKDF2 hashed password for the new user
-			$password = hash_pbkdf2($algorithm, $_POST["password"], $salt, $iterations);
+			$hash = password_hash($_POST["password"], PASSWORD_BCRYPT);
 		}
 		else {
 			echo "Password Required.<br>";
 		}
 
 		// Registers a new user
-		if(isset($username) && isset($email) && isset($password)) {
+		if(isset($username) && isset($email) && isset($hash)) {
 			// Checks for existing username in database
 			$sql = "SELECT * FROM `users` WHERE (`user_name`=" . db_quote($username) . ") LIMIT 1";
 			$result = db_select($sql);
@@ -56,8 +51,8 @@ function user_register() {
 				}
 				else {
 					// Stores the new user's name, email, hashed password, and salt into the database
-					$sql = "INSERT INTO `users` (`user_name`, `user_email`, `user_password`, `user_salt`) 
-							VALUES (" . db_quote($username) . "," . db_quote($email) . "," . db_quote($password) . "," . db_quote($salt) . ")";
+					$sql = "INSERT INTO `users` (`user_name`, `user_email`, `user_hash`) 
+							VALUES (" . db_quote($username) . "," . db_quote($email) . "," . db_quote($hash) . ")";
 					$result = db_query($sql);
 						
 					// Checks for result
