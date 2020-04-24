@@ -140,6 +140,10 @@ function printUserInfo() {
               <label>Enter Password:</label> <input type="password" name="password" size="25" class="required"/><br/>
               <label>Confirm Password:</label> <input type="password" name="confirmPassword" size="25" class="required"/>
 				      <br><br>
+
+              <label>First Name:</label> <input type="text" name="firstName" value="<?php echo $_SESSION['user_first_name']; ?>" size="25" class="required"/><br/>
+              <label>Last Name:</label> <input type="text" name="lastName" value="<?php echo $_SESSION['user_last_name']; ?>" size="25" class="required" /><br/>
+
               <h4>Change Your Skill Level:</h4>
                 
                 <input type="radio" name="skill" value="beginner" class="required" <?php if ($_SESSION['user_level'] == 0) { echo "checked"; } ?> /> Beginner
