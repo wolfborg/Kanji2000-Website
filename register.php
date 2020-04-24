@@ -33,6 +33,28 @@ function user_register() {
 			echo "Password Required.<br>";
 		}
 
+		$firstName = "";
+		$lastName = "";
+		$level = 0;
+
+		if (isset($_POST["firstName"])) {
+			$firstName = $_POST["firstName"];
+		}
+		if (isset($_POST["lastName"])) {
+			$lastName = $_POST["lastName"];
+		}
+		if (isset($_POST["skill"])) {
+			if ($_POST["skill"] == "beginner") {
+				$level = 0;
+			}
+			else if ($_POST["skill"] == "intermediate") {
+				$level = 1;
+			}
+			else if ($_POST["skill"] == "expert") {
+				$level = 2;
+			}
+		}
+
 		// Registers a new user
 		if(isset($username) && isset($email) && isset($hash)) {
 			// Checks for existing username in database
@@ -51,8 +73,8 @@ function user_register() {
 				}
 				else {
 					// Stores the new user's name, email, hashed password, and salt into the database
-					$sql = "INSERT INTO `users` (`user_name`, `user_email`, `user_hash`) 
-							VALUES (" . db_quote($username) . "," . db_quote($email) . "," . db_quote($hash) . ")";
+					$sql = "INSERT INTO `users` (`user_name`, `user_email`, `user_hash`, `user_first_name`, `user_last_name`, `user_level`) 
+							VALUES (" . db_quote($username) . "," . db_quote($email) . "," . db_quote($hash)  . "," . db_quote($firstName) . "," . db_quote($lastName) . "," . db_quote($level) . ")";
 					$result = db_query($sql);
 						
 					// Checks for result
