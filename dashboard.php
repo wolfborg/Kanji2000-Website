@@ -40,8 +40,8 @@ function printUserInfo() {
 
 ?>
 
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <title>Dashboard</title>
@@ -141,10 +141,10 @@ function printUserInfo() {
               <label>Confirm Password:</label> <input type="password" name="confirmPassword" size="25" class="required"/>
 				      <br><br>
               <h4>Change Your Skill Level:</h4>
-
-                <input type="radio" name="skill" value="beginner" class="required"/> Beginner
-                <input type="radio" name="skill" value="intermediate" class="required"/> Intermediate
-                <input type="radio" name="skill" value="expert" class="required"/> Expert<br/><br/>
+                
+                <input type="radio" name="skill" value="beginner" class="required" <?php if ($_SESSION['user_level'] == 0) { echo "checked"; } ?> /> Beginner
+                <input type="radio" name="skill" value="intermediate" class="required" <?php if ($_SESSION['user_level'] == 1) { echo "checked"; } ?> /> Intermediate
+                <input type="radio" name="skill" value="expert" class="required" <?php if ($_SESSION['user_level'] == 2) { echo "checked"; } ?> /> Expert<br/><br/>
                 <div class="rectangle centered"> 
 
                 <div>

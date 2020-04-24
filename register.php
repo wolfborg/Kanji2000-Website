@@ -96,6 +96,7 @@ function user_register() {
 							$_SESSION['user_id'] = $result[0]['user_id'];
 							$_SESSION['user_name'] = $result[0]['user_name'];
 							$_SESSION['user_email'] = $result[0]['user_email'];
+							$_SESSION['user_level'] = $result[0]['user_level'];
 							header("location: dashboard.php");
 						}
 					}
